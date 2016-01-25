@@ -1,0 +1,25 @@
+{
+  "name": "babystuff",
+  "version": "1.0.0",
+  "description": "This project is to make recall and best consumer information for infant gear readily available to public.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-request-proxy": "^1.0.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadiabahrami/babystuff.git"
+  },
+  "author": "Nadia Bahrami, Raziyeh Bazargan, Paul Sheridan, Kate Zurlo-Cuva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nadiabahrami/babystuff/issues"
+  },
+  "homepage": "https://github.com/nadiabahrami/babystuff#readme"
+}
