@@ -1,7 +1,6 @@
 (function(module){// search recalls
   var cpsc = {};
   cpsc.all = [];
-  cpsc.newUPC = [];
 
   cpsc.editted = [];
 
@@ -19,20 +18,14 @@
     });
   };
 
-
-  cpsc.ProductUPC = function(x){
-    x.forEach(function(y){
+  cpsc.ProductUPC = function(x){//this function filters for ProductUPC proerties
+    var newUPC = [];
+    x.filter(function(y){
       if(y.ProductUPCs.length !== 0){
-        console.log("found ProductUPC");
-        cpsc.newUPC.push(y);
-        x.splice(x.indexOf(y), 1);
+        newUPC.push(y);
       }
     });
-    console.log(cpsc.newUPC.length);
-    console.log(cpsc.newUPC);
-    console.log(x.length);
-    console.log(x);
-    cpsc.all = x;
+    return newUPC;
   };
 
 
@@ -53,6 +46,7 @@
 // console.log(descriptionUPC);
 // console.log(returned);
 // })
+
 cpsc.findItem = function(searchUPC){
   //run against ProductUPC array dirrect UPC to searchUPC
   //if not found:
