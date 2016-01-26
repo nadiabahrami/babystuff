@@ -16,8 +16,26 @@
       }else{
         alert('Recall database unavailable!');
       }
+    })
+    // .done(function(){
+    //   var test = [];
+    //   var missing = [];
+    //   for(var i=0; i<cpsc.all.length; i++){
+    //     if(cpsc.all[i].Products.length !==0){
+    //       if(cpsc.all[i].Products[0].Type === "Babies and Kids"){
+    //       console.log("man exists");
+    //       test.push(cpsc.all[i]);
+    //       }
+    //     }else{
+    //         missing.push(cpsc.all[i]);
+    //       }
+    //   };
+    //   console.log(test.length);
+    //   console.log(test);
+    //   console.log(missing.length);
+    //   console.log(missing);
     });
-  };
+};
 
 
   cpsc.ProductUPC = function(x){
