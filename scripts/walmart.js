@@ -8,9 +8,12 @@
       type: 'GET',
       url: 'http://api.walmartlabs.com/v1/search?' +
         'query=' + query + '&format=json&categoryId=5427' +
-        '&apiKey=' + process.env.WALMART_KEY,
+        '&apiKey=nzqhwruahscwc5ra9kb5uzb6',
       jsonp: 'callback',
       dataType: 'jsonp',
+      data: {
+        categoryId: '5427',
+      },
       success: function(data){
         walmart.all = data;
         console.log(data);
