@@ -11,6 +11,7 @@
       localStorage.setItem('searchResult', JSON.stringify(objData.dataArray));
     }
     autoCompleteTextBox();
+    // if(isNaN($('#searchText').val())){}
     $('#searchText').val('');
   });
 
@@ -28,6 +29,7 @@
     }
   }
   autoCompleteTextBox();
+
 
   module.objData = objData;
 })(window);
