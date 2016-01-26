@@ -10,17 +10,24 @@
       objData.dataArray.push($('#searchText').val());
       localStorage.setItem('searchResult', JSON.stringify(objData.dataArray));
     }
+    autoCompleteTextBox();
     $('#searchText').val('');
   });
 
   // for autoComplete in search textbox
-  var autoCompleteData = JSON.parse(localStorage.getItem('searchResult'));
-  $('#searchText').autocomplete({
-    source:autoCompleteData,
-    multiple: true,
-    mustMatch: true,
-    autoFill: true,
-    minLength: 1
-  });
+  function autoCompleteTextBox() {
+    var autoCompleteData = JSON.parse(localStorage.getItem('searchResult'));
+    if (autoCompleteData) {
+      $('#searchText').autocomplete({
+        source: autoCompleteData,
+        multiple: true,
+        mustMatch: true,
+        autoFill: true,
+        minLength: 1
+      });
+    }
+  }
+  autoCompleteTextBox();
+
   module.objData = objData;
 })(window);
