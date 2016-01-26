@@ -24,8 +24,8 @@
         walmart.all = data;
         console.log(data);
       }
-      })
-    }
+    });
+  };
 
  // .done(callback);
 // };
