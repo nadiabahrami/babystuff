@@ -4,7 +4,7 @@
 
 ​
 
- $(document.body).append(compiled(templateData));
+ (document.body).append(compiled(templateData));
 
 
 })(window);
