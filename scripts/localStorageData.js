@@ -1,15 +1,14 @@
 (function(module){
-  var retrieveData = [];
-  var objData = {};
-  objData.all = [];
+  var dataArray = [];
     $('#btn_search').on('click',function(){
       if (localStorage.searchResult) {
-        var getData = JSON.parse(localStorage.getItem('searchResult'));
-        retrieveData.push($('#searchText').val());
-        localStorage.setItem('searchResult', JSON.stringify(retrieveData));
+        dataArray = JSON.parse(localStorage.getItem('searchResult'));
+        dataArray.push($('#searchText').val());
+        localStorage.setItem('searchResult', JSON.stringify(dataArray));
       }else {
-        localStorage.setItem('searchResult', JSON.stringify($('#searchText').val()));
+        dataArray.push($('#searchText').val());
+        localStorage.setItem('searchResult', JSON.stringify(dataArray));
       }
     });
-  module.objData = objData;
+  module.dataArray = dataArray;
 })(window);
