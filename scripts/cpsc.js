@@ -46,6 +46,14 @@
 // console.log(descriptionUPC);
 // console.log(returned);
 // })
+cpsc.userCompare = function(filteredArray, userUPC){// this function takes the upc from user and compare against the array fed into it
+  if(filteredArray.indexOf(userUPC)<0){
+    return "not found";
+  }else{
+    return "found";
+  }
+};
+
 
 cpsc.findItem = function(searchUPC){
   //run against ProductUPC array dirrect UPC to searchUPC
