@@ -12,8 +12,12 @@
       localStorage.setItem('searchResult', JSON.stringify(objData.dataArray));
     }
     autoCompleteTextBox();
+
     objData.active =$('#searchText').val();
     console.log(objData.active);
+
+    // if(isNaN($('#searchText').val())){}
+
     $('#searchText').val('');
   });
 
@@ -31,6 +35,7 @@
     }
   }
   autoCompleteTextBox();
+
 
   module.objData = objData;
 })(window);
