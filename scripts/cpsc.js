@@ -35,17 +35,7 @@
     cpsc.all = x;
   };
 
-//   .done(function(){
-//
-// var newUPC = [];
-//
-// for(i=0; i<returned.length; i++){
-//   if(returned[i].ProductUPCs.length !==0){
-//     newUPC.push(returned[i]);
-//     returned.splice(returned[i], 1);
-//     i--;
-//   }
-// };
+
 // console.log(newUPC.length);
 // console.log(returned.length);
 // }).done(function (){
@@ -63,6 +53,19 @@
 // console.log(descriptionUPC);
 // console.log(returned);
 // })
-
+cpsc.findItem = function(searchUPC){
+  //run against ProductUPC array dirrect UPC to searchUPC
+  //if not found:
+  //run against decriptionUPC array dirrect UPC to search UPC
+  //if not found:
+  //Walmart ajax query specific searchUPC bring back
+  //run productName against Wallmart
+  //if not found:
+  //WAlmart(searchUPC) manufacturer name against cpsc manufacturer name
+  //if not found:
+  //cpcs description against Wallmart productName
+  //if not found:
+  //Success!  Item is not recalled
+};
  module.cpsc = cpsc;
 })(window);
