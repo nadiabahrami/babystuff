@@ -4,6 +4,7 @@ var requestProxy = require('express-request-proxy'),
   app = express();
 
 var proxyWalMart = function(request, response) {
+  
   console.log('Routing Walmart request for', request.params[0]);
   (requestProxy({
     type: 'GET',
