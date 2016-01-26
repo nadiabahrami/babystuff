@@ -1,6 +1,7 @@
 (function(module){
   var objData = {};
   objData.dataArray = [];
+  objData.active;
   $('#btn_search').on('click',function(){
     if (localStorage.searchResult) {
       objData.dataArray = JSON.parse(localStorage.getItem('searchResult'));
@@ -11,6 +12,8 @@
       localStorage.setItem('searchResult', JSON.stringify(objData.dataArray));
     }
     autoCompleteTextBox();
+    objData.active =$('#searchText').val();
+    console.log(objData.active);
     $('#searchText').val('');
   });
 
