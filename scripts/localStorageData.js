@@ -1,6 +1,7 @@
 (function(module){
 
   var retrieveData = [];
+  var getData;
   var objData = {};
   objData.all = [];
   objData.request = function(){
