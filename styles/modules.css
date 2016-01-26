@@ -23,11 +23,10 @@
 
 body{
     padding:50px 0px 0px 0px;
-    z-index:0;
 }
 
 .navbar-inverse {
-     background: #303F9F;
+    background: #303F9F;
     color: white;
 }
 
@@ -36,21 +35,4 @@ body{
 .navbar-inverse .navbar-nav > .active > a:focus {
     color: #fff;
     background: #1A237E;
-}
-
-.navbar-inverse .navbar-nav > .open > a,
- .navbar-inverse .navbar-nav > .open > a:hover,
- .navbar-inverse .navbar-nav > .open > a:focus {
-    color: #fff;
-    background: #1A237E;
-}
-
-.navbar-inverse .navbar-nav .open .dropdown-menu> li> a,
-.navbar-inverse .navbar-nav .open .dropdown-menu {
-    background-color: #303F9F;
-    color:#eeeeee;
-}
-
-.navbar-inverse .navbar-nav .open .dropdown-menu> li> a:hover {
-    color:#000000;
 }
