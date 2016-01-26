@@ -1,30 +1,23 @@
 (function(module){// search recalls
   var cpsc = {};
- cpsc.SearchRecalls = function () {
- //   // CPSCDomain
- //    var CPSCDomain = "http://www.saferproducts.gov/RestWebServices";
- //    // recalls URL
- //    var URL = CPSCDomain + "/Recall" + "?format=json";
- //    // add filters
- //
- //    var fieldNames = "Products";
- //    for (var i = 0; i < fieldNames.length; i++) {
- //    fieldValue = GetFieldValue(fieldNames[i]);
- //    if (fieldValue != null && fieldValue.trim() != "")
- //    URL += "&" + fieldNames[i] + "=" + fieldValue.trim();
- //    }
-var returned;
- // get recalls
- console.log("between funtions");
- $.get('http://www.saferproducts.gov/RestWebServices/Recall?format=json', function (data) {
-   if (data != null) {
-    console.log(data);
-    returned = data;
-    console.log(returned.length);
-   }else{
-     alert('null!');
-   }
- }).done(function(){
+  cpsc.all = [];
+
+  cpsc.getRecalls = function() {
+    console.log("between funtions");
+    $.get('http://www.saferproducts.gov/RestWebServices/Recall?format=json', function(data){
+      if (data != null) {
+        console.log(data);
+        cpsc.all = data;
+        console.log(returned.length);
+      }else{
+        alert('Recall database unavailable!');
+      }
+    });
+  };
+
+
+
+  .done(function(){
 
 var newUPC = [];
 
