@@ -33,7 +33,7 @@
     //   console.log(test);
     //   console.log(missing.length);
     //   console.log(missing);
-    });
+    // });
 };
 
   cpsc.ProductUPC = function(x){//this function filters for ProductUPC proerties

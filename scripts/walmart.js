@@ -21,13 +21,17 @@
   walmart.upcRequest = function(upc) {
     $.ajax({
       type: 'GET',
-      url: 'http://api.walmartlabs.com/v1/search?apiKey=zqhwruahscwc5ra9kb5uzb6&query=' + upc,
+      url: 'http://api.walmartlabs.com/v1/search?' +
+        'apiKey=nzqhwruahscwc5ra9kb5uzb6&query=' + upc,
       jsonp: 'callback',
       dataType: 'jsonp',
       success: function(data){
         console.log(data);
       }
     });
+
+    $.get('walmart/search?' +
+      'apiKey=nzqhwruahscwc5ra9kb5uzb6&query=' + upc,')
   };
 
 
