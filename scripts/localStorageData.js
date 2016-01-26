@@ -7,17 +7,13 @@
     console.log('click');
     $('#btn_search').on('click',function(){
       if (localStorage.searchResult) {
-        retrieveData = JSON.parse(localStorage.getItem('searchResult'));
-        console.log(retrieveData);
-
-        retrieveData.push = $('#searchText').val();
-        console.log(retrieveData);
-
+        retrieveData.push(JSON.parse(localStorage.getItem('searchResult')));
+        retrieveData.push($('#searchText').val());
         localStorage.setItem('searchResult', JSON.stringify(retrieveData));
-    }else {
-      localStorage.setItem('searchResult', JSON.stringify($('#searchText').val()));
-    }
-  });
-}
-module.objData = objData;
+      }else {
+        localStorage.setItem('searchResult', JSON.stringify($('#searchText').val()));
+      }
+    });
+  }
+  module.objData = objData;
 })(window);
