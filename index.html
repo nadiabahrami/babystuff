@@ -6,8 +6,8 @@
   	<meta name="Viewport" content="width=device-width,initial-scale=1">
     <title>BabySafe</title>
     <link rel="stylesheet" href="vendor/scripts/normalize.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="./styles/layouts.css">
     <link rel="stylesheet" href="./styles/modules.css">
     <title>BabySafe</title>
@@ -54,7 +54,7 @@
             <form class="navbar-form  pull-right" role="search">
               <div class="form-group">
                 <label class="sr-only" for="seachText"></label>
-                <input type="text" class="form-control" id="searchText" maxlength="12">
+                <input type="text" class="form-control" id="searchText" maxlength="12" pattern="[0-9]{12}" title="Enter a UPC number">
               </div>
               <button type="button" class="btn btn-info btn-md" id="btn_search">Search</button>
             </form>
@@ -75,6 +75,7 @@
           </ul>
         </section>
       <section id="about"></section>
+
     </main>
 
 
