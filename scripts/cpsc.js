@@ -77,7 +77,7 @@
     if(check === -1) {
       console.log(userUPC);
       console.log('notfound');
-      return 'not found';
+      return false;
     }else{
       console.log('found');
       console.log(userUPC);
