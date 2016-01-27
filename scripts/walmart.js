@@ -26,8 +26,12 @@
       jsonp: 'callback',
       dataType: 'jsonp',
       success: function(data){
-        walmart.upc = data.items[0];
-        console.log(walmart.upc);
+        if(data.items[0]){
+          walmart.upc = data.items[0];
+        } else {
+          walmart.upc = {};
+        }
+        return walmart.upc;
       }
     });
   };
