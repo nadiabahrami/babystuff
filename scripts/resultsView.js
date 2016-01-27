@@ -1,8 +1,9 @@
 (function(){
   var resultsView= {};
 
-  resultsView.recallDisplay = function(result){
-    if(result === "found"){
+
+
+
       //display to user item has been recalled and should not be purchased
       //Run function to display alternates
     }else{
