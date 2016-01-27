@@ -3,21 +3,23 @@
   objData.dataArray = [];
   objData.active;
   $('#btn_search').on('click',function(){
+    var textBoxValue = $('#searchText').val();
     if (localStorage.searchResult) {
       objData.dataArray = JSON.parse(localStorage.getItem('searchResult'));
-      objData.dataArray.push($('#searchText').val());
-      localStorage.setItem('searchResult', JSON.stringify(objData.dataArray));
+        if(objData.dataArray.indexOf(textBoxValue) === -1){
+          objData.dataArray.push(textBoxValue);
+          localStorage.setItem('searchResult', JSON.stringify(objData.dataArray));
+         }
     }else {
-      objData.dataArray.push($('#searchText').val());
+      objData.dataArray.push(textBoxValue);
       localStorage.setItem('searchResult', JSON.stringify(objData.dataArray));
     }
     autoCompleteTextBox();
+    objData.active = textBoxValue;
 
-    objData.active =$('#searchText').val();
-    console.log(objData.active);
-
-    // if(isNaN($('#searchText').val())){}
-
+    if(isNaN(textBoxValue)){
+      console.log('it\'s not a number');
+    }
     $('#searchText').val('');
   });
 
@@ -35,7 +37,5 @@
     }
   }
   autoCompleteTextBox();
-
-
   module.objData = objData;
 })(window);
