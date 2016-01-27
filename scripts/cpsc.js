@@ -2,6 +2,7 @@
   var cpsc = {};
   cpsc.all = [];
 
+
   cpsc.editted = [];
 
   cpsc.getRecalls = function() {
@@ -64,11 +65,32 @@
 // console.log(descriptionUPC);
 // console.log(returned);
 // })
+cpsc.sort = function(temp){
+  console.log(temp);
+  var upcs = [];
+  temp.forEach(function(x){
+    upcs.push(x.ProductUPCs[0].UPC.replace(/\s/g,''));
+
+  });
+  console.log(upcs)
+  return upcs;
+};
+
+
 cpsc.userCompare = function(filteredArray, userUPC){// this function takes the upc from user and compare against the array fed into it
-  if(filteredArray.indexOf(userUPC)<0){
+  console.log(filteredArray);
+
+  var temp = [];
+  temp = cpsc.sort(filteredArray);
+  var check = temp.indexOf(userUPC);
+  if(check<0){
+    console.log(userUPC);
+    console.log("notfound");
     return "not found";
   }else{
-    return "found";
+    console.log("found");
+    console.log(userUPC);
+    return filteredArray[check];
   }
 };
 
