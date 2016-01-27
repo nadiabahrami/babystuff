@@ -22,6 +22,7 @@
       $('#searchText').tooltip('disable');
       $('#searchText').removeClass('errorText');
       objData.active = textBoxValue;
+      cpsc.controller(objData.active);
     }
     $('#searchText').val('');
   });

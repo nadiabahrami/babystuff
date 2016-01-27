@@ -12,24 +12,6 @@
         alert('Recall database unavailable!');
       }
     });
-    // .done(function(){
-    //   var test = [];
-    //   var missing = [];
-    //   for(var i=0; i<cpsc.all.length; i++){
-    //     if(cpsc.all[i].Products.length !==0){
-    //       if(cpsc.all[i].Products[0].Type === 'Babies and Kids'){
-    //       console.log('man exists');
-    //       test.push(cpsc.all[i]);
-    //       }
-    //     }else{
-    //         missing.push(cpsc.all[i]);
-    //       }
-    //   };
-    //   console.log(test.length);
-    //   console.log(test);
-    //   console.log(missing.length);
-    //   console.log(missing);
-    // });
   };
 
 //this function filters for ProductUPC proerties
@@ -40,37 +22,17 @@
     return upcFilter;
   };
 
-// console.log(newUPC.length);
-// console.log(returned.length);
-// }).done(function (){
-//   var descriptionUPC = [];
-//   for(i=0; i<returned.length; i++){
-//     if(returned[i].Description.match(/\b\d{12}\b/g) && returned[i].Description.match(/UPC/)){
-//       //store REGEX search for others and store into object
-//       descriptionUPC.push(returned[i]);
-//       returned.splice(returned[i], 1);
-//       i--;
-//     }
-//   };
-// console.log(descriptionUPC.length);
-// console.log(returned.length);
-// console.log(descriptionUPC);
-// console.log(returned);
-// })
-
   cpsc.sort = function(entries){
-    console.log(entries);
     var upcArray = [];
     entries.forEach(function(entry){
       upcArray.push(entry.ProductUPCs[0].UPC.replace(/\s/g,''));
     });
-    console.log(upcArray);
+    // console.log(upcArray);
     return upcArray;
   };
 
 // this function takes the upc from user and compare against the array fed into it
   cpsc.userCompare = function(entriesWithUPC, userUPC){
-    console.log(entriesWithUPC);
     var upcArr = [];
     upcArr = cpsc.sort(entriesWithUPC);
     var check = upcArr.indexOf(userUPC);
@@ -96,8 +58,18 @@
   };
 
 
-  cpsc.controller = function(searchUPC){
-    
+  cpsc.controller = function(upc){
+    var upcResult = cpsc.productUPC(cpsc.all);
+    var cpscSearch = cpsc.userCompare(upcResult, upc);
+    var productInfo = walmart.upcRequest(upc);
   };
+
+  cpsc.getMfgr = function (item){
+    console.log(item.name.split(/\s+/).slice(0,2).join(' '));
+    console.log(item.name.split(/\s+/).slice(0,1).join(' '));
+    cpsc.mfgrSearch(item.name.split(/\s+/).slice(0,2).join(' '), cpsc.all);
+    cpsc.mfgrSearch(item.name.split(/\s+/).slice(0,1).join(' '), cpsc.all);
+  }
+
   module.cpsc = cpsc;
 })(window);

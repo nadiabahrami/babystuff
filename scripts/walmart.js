@@ -26,12 +26,8 @@
       jsonp: 'callback',
       dataType: 'jsonp',
       success: function(data){
-        if(data.items[0]){
-          walmart.upc = data.items[0];
-        } else {
-          walmart.upc = {};
-        }
-        return walmart.upc;
+        console.log(data.items);
+        cpsc.getMfgr(data.items[0]);
       }
     });
   };
@@ -41,15 +37,25 @@
   //   .done(function(data) {
   //     console.log(data);
   //   })
-  //   .done(callback);
+  //   .done(function(data){
+  //     walmart.all = data.items;
+  //     console.log(walmart.all);
+  //   });
   // };
   //
   // walmart.upcRequest = function(upc, callback) {
-  //   $.get('/walmart/apiKey=nzqhwruahscwc5ra9kb5uzb6&query=' + upc)
+  //   $.get('/walmart/&query=' + upc)
   //   .done(function(data) {
   //     console.log(data);
   //   })
-  //   .done(callback);
+  //   .done(function(data){
+  //     if(data.items[0]){
+  //       walmart.upc = data.items[0];
+  //     } else {
+  //       walmart.upc = {};
+  //     }
+  //     return walmart.upc;
+  //   });
   // };
 
   module.walmart = walmart;
