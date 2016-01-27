@@ -36,3 +36,6 @@ body{
     color: #fff;
     background: #1A237E;
 }
+.errorText{
+  outline: 1px red solid;
+}
