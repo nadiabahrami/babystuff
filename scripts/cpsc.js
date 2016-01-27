@@ -64,7 +64,8 @@
   cpsc.sort = function(entriesWithUPC){
     console.log(entriesWithUPC);
     var upcArray = [];
-    entriesWithUPC.forEach(function(entry){
+    entriesWithUPC.forEach(function(e
+      ntry){
       upcArray.push(entry.ProductUPCs[0].UPC.replace(/\s/g,''));
     });
     console.log(upcArray);
