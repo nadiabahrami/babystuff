@@ -29,12 +29,7 @@
         console.log(data);
       }
     });
-
-    $.get('walmart/search?' +
-      'apiKey=nzqhwruahscwc5ra9kb5uzb6&query=' + upc,')
   };
-
-
 
 
   module.walmart = walmart;
