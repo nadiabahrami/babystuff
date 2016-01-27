@@ -31,21 +31,5 @@
     });
   };
 
-  // walmart.similarRequest = function(query, callback) {
-  //   $.get('/walmart/query=' + query + '&format=json&categoryId=5427')
-  //   .done(function(data) {
-  //     console.log(data);
-  //   })
-  //   .done(callback);
-  // };
-  //
-  // walmart.upcRequest = function(upc, callback) {
-  //   $.get('/walmart/apiKey=nzqhwruahscwc5ra9kb5uzb6&query=' + upc)
-  //   .done(function(data) {
-  //     console.log(data);
-  //   })
-  //   .done(callback);
-  // };
-
   module.walmart = walmart;
 })(window);
