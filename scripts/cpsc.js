@@ -96,19 +96,8 @@
   };
 
 
-  cpsc.findItem = function(searchUPC){
-    //run against ProductUPC array dirrect UPC to searchUPC
-    //if not found:
-    //run against decriptionUPC array dirrect UPC to search UPC
-    //if not found:
-    //Walmart ajax query specific searchUPC bring back
-    //run productName against Wallmart
-    //if not found:
-    //WAlmart(searchUPC) manufacturer name against cpsc manufacturer name
-    //if not found:
-    //cpcs description against Wallmart productName
-    //if not found:
-    //Success!  Item is not recalled
+  cpsc.controller = function(searchUPC){
+    
   };
   module.cpsc = cpsc;
 })(window);
