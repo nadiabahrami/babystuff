@@ -36,6 +36,12 @@ body{
     color: #fff;
     background: #1A237E;
 }
+
 .errorText{
   outline: 1px red solid;
 }
+
+.jumbotron {
+  background: url(/images/BabyHeader.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
