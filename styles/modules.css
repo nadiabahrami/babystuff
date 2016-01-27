@@ -36,3 +36,9 @@ body{
     color: #fff;
     background: #1A237E;
 }
+
+.jumbotron {
+  background: url(/images/BabyHeader.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
+}
