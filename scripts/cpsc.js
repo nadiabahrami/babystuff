@@ -81,6 +81,7 @@
     }else{
       console.log('found');
       console.log(userUPC);
+      console.log(entriesWithUPC[check]);
       return entriesWithUPC[check];
     }
   };
@@ -97,7 +98,7 @@
 
 
   cpsc.controller = function(searchUPC){
-    
+
   };
   module.cpsc = cpsc;
 })(window);
