@@ -9,6 +9,29 @@ function Result (data) {
   this.shortDescription = data.shortDescription,
   this.customerRatingImage = data.customerRatingImage
 };
+resultArray.badItem = function(result){
+  if(cpsc.userCompare === 'not found'){
+    var template = $("#rsltPic").html();
+    var compile = Handlebars.compile(template);
+    var data = {
+        "imgresponse":"/images/Green.png",
+        "searchUPC":objData.active,
+        "recommendation": "'Not a known recalled item.  We would not recommend purchasing this object.'"
+      };
+    var render = compile(data);
+    $('#img').append(render);
+  }else{
+    var template = $("#rsltPic").html();
+    var compile = Handlebars.compile(template);
+    var data = {
+        "imgresponse":"/images/Red.png",
+        "searchUPC":objData.active,
+        "recommendation": "'RECALLED.  We would not recommend purchasing this object.'"
+      };
+    var render = compile(data);
+    $('#img').append(render);
+  }
+};
 
 Result.prototype.recallDisplay = function(result) {
   if (cpsc.userCompare === "found") {
