@@ -43,6 +43,7 @@
     }else{
       console.log('found');
       console.log(userUPC);
+      console.log(entriesWithUPC[check]);
       return entriesWithUPC[check];
     }
   };
@@ -62,6 +63,9 @@
     var upcResult = cpsc.productUPC(cpsc.all);
     var cpscSearch = cpsc.userCompare(upcResult, upc);
     var productInfo = walmart.upcRequest(upc);
+
+
+
   };
 
   cpsc.getMfgr = function (item){
