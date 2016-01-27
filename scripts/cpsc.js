@@ -2,28 +2,23 @@
   var cpsc = {};
   cpsc.all = [];
 
-
-  cpsc.editted = [];
-
   cpsc.getRecalls = function() {
-    console.log("between funtions");
     $.get('http://www.saferproducts.gov/RestWebServices/Recall?format=json', function(data){
       if (data != null) {
         console.log(data);
         cpsc.all = data;
-        cpsc.editted =data;
         console.log(cpsc.all.length);
       }else{
         alert('Recall database unavailable!');
       }
-    })
+    });
     // .done(function(){
     //   var test = [];
     //   var missing = [];
     //   for(var i=0; i<cpsc.all.length; i++){
     //     if(cpsc.all[i].Products.length !==0){
-    //       if(cpsc.all[i].Products[0].Type === "Babies and Kids"){
-    //       console.log("man exists");
+    //       if(cpsc.all[i].Products[0].Type === 'Babies and Kids'){
+    //       console.log('man exists');
     //       test.push(cpsc.all[i]);
     //       }
     //     }else{
@@ -35,18 +30,18 @@
     //   console.log(missing.length);
     //   console.log(missing);
     // });
-};
-
-  cpsc.ProductUPC = function(x){//this function filters for ProductUPC proerties
-    var newUPC = [];
-    x.filter(function(y){
-      if(y.ProductUPCs.length !== 0){
-        newUPC.push(y);
-      }
-    });
-    return newUPC;
   };
 
+//this function filters for ProductUPC proerties
+  cpsc.productUPC = function(dataAll){
+    var entriesWithUPC = [];
+    dataAll.filter(function(dataEntry){
+      if(dataEntry.ProductUPCs.length !== 0){
+        entriesWithUPC.push(dataEntry);
+      }
+    });
+    return entriesWithUPC;
+  };
 
 // console.log(newUPC.length);
 // console.log(returned.length);
@@ -65,49 +60,60 @@
 // console.log(descriptionUPC);
 // console.log(returned);
 // })
-cpsc.sort = function(temp){
-  console.log(temp);
-  var upcs = [];
-  temp.forEach(function(x){
-    upcs.push(x.ProductUPCs[0].UPC.replace(/\s/g,''));
 
-  });
-  console.log(upcs)
-  return upcs;
-};
+  cpsc.sort = function(entriesWithUPC){
+    console.log(entriesWithUPC);
+    var upcArray = [];
+    entriesWithUPC.forEach(function(entry){
+      upcArray.push(entry.ProductUPCs[0].UPC.replace(/\s/g,''));
+    });
+    console.log(upcArray);
+    return upcArray;
+  };
+
+// this function takes the upc from user and compare against the array fed into it
+  cpsc.userCompare = function(entriesWithUPC, userUPC){
+    console.log(entriesWithUPC);
+    var upcArr = [];
+    upcArr = cpsc.sort(entriesWithUPC);
+    var check = upcArr.indexOf(userUPC);
+    if(check === -1) {
+      console.log(userUPC);
+      console.log('notfound');
+      return 'not found';
+    }else{
+      console.log('found');
+      console.log(userUPC);
+      return entriesWithUPC[check];
+    }
+  };
+
+  cpsc.mfgrSearch = function(mfgrName, dataAll){
+    var recallsArray = [];
+    var replies = dataAll.filter(function(entry){
+      entry.Manufacturers.map(function(mfgr){
+        if (mfgrName === mfgr.Name){
+          recallsArray.push(entry);
+        }
+      });
+    });
+    console.log(recallsArray);
+  };
 
 
-cpsc.userCompare = function(filteredArray, userUPC){// this function takes the upc from user and compare against the array fed into it
-  console.log(filteredArray);
-
-  var temp = [];
-  temp = cpsc.sort(filteredArray);
-  var check = temp.indexOf(userUPC);
-  if(check<0){
-    console.log(userUPC);
-    console.log("notfound");
-    return "not found";
-  }else{
-    console.log("found");
-    console.log(userUPC);
-    return filteredArray[check];
-  }
-};
-
-
-cpsc.findItem = function(searchUPC){
-  //run against ProductUPC array dirrect UPC to searchUPC
-  //if not found:
-  //run against decriptionUPC array dirrect UPC to search UPC
-  //if not found:
-  //Walmart ajax query specific searchUPC bring back
-  //run productName against Wallmart
-  //if not found:
-  //WAlmart(searchUPC) manufacturer name against cpsc manufacturer name
-  //if not found:
-  //cpcs description against Wallmart productName
-  //if not found:
-  //Success!  Item is not recalled
-};
- module.cpsc = cpsc;
+  cpsc.findItem = function(searchUPC){
+    //run against ProductUPC array dirrect UPC to searchUPC
+    //if not found:
+    //run against decriptionUPC array dirrect UPC to search UPC
+    //if not found:
+    //Walmart ajax query specific searchUPC bring back
+    //run productName against Wallmart
+    //if not found:
+    //WAlmart(searchUPC) manufacturer name against cpsc manufacturer name
+    //if not found:
+    //cpcs description against Wallmart productName
+    //if not found:
+    //Success!  Item is not recalled
+  };
+  module.cpsc = cpsc;
 })(window);
