@@ -12,7 +12,7 @@
       jsonp: 'callback',
       dataType: 'jsonp',
       success: function(data){
-        walmart.all = data;
+        walmart.all = data.items;
         console.log(walmart.all);
       }
     });
@@ -26,7 +26,8 @@
       jsonp: 'callback',
       dataType: 'jsonp',
       success: function(data){
-        console.log(data);
+        walmart.upc = data.items[0];
+        console.log(walmart.upc);
       }
     });
   };
