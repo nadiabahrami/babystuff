@@ -90,16 +90,15 @@
 
   cpsc.mfgrSearch = function(mfgrName, dataAll){
     var recallsArray = [];
-    var replies = dataAll.filter(function(entry){
-      entry.Manufacturers.map(function(mfgr){
+    var replies = dataAll.map(function(entry){
+      entry.Manufacturers.filter(function(mfgr){
         if (mfgrName === mfgr.Name){
           recallsArray.push(entry);
         }
       });
     });
-    console.log(recallsArray);
+    return recallsArray;
   };
-
 
   cpsc.findItem = function(searchUPC){
     //run against ProductUPC array dirrect UPC to searchUPC
