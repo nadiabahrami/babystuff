@@ -34,13 +34,10 @@
 
 //this function filters for ProductUPC proerties
   cpsc.productUPC = function(dataAll){
-    var entriesWithUPC = [];
-    dataAll.filter(function(dataEntry){
-      if(dataEntry.ProductUPCs.length !== 0){
-        entriesWithUPC.push(dataEntry);
-      }
+    var upcFilter = dataAll.filter(function(dataEntry){
+      return dataEntry.ProductUPCs.length !== 0;
     });
-    return entriesWithUPC;
+    return upcFilter;
   };
 
 // console.log(newUPC.length);
@@ -61,10 +58,10 @@
 // console.log(returned);
 // })
 
-  cpsc.sort = function(entriesWithUPC){
-    console.log(entriesWithUPC);
+  cpsc.sort = function(entries){
+    console.log(entries);
     var upcArray = [];
-    entriesWithUPC.forEach(function(entry){
+    entries.forEach(function(entry){
       upcArray.push(entry.ProductUPCs[0].UPC.replace(/\s/g,''));
     });
     console.log(upcArray);
@@ -89,15 +86,13 @@
   };
 
   cpsc.mfgrSearch = function(mfgrName, dataAll){
-    var recallsArray = [];
     var replies = dataAll.filter(function(entry){
-      entry.Manufacturers.map(function(mfgr){
-        if (mfgrName === mfgr.Name){
-          recallsArray.push(entry);
-        }
+      var mfgrs = entry.Manufacturers.filter(function(mfgr){
+        return mfgrName === mfgr.Name;
       });
+      if (mfgrs.length > 0) return entry;
     });
-    console.log(recallsArray);
+    console.log(replies);
   };
 
 
