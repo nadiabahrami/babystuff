@@ -5,7 +5,7 @@ var requestProxy = require('express-request-proxy'),
 
 var proxyWalMart = function(request, response) {
   var urlString = 'http://api.walmartlabs.com/v1/search?' + request.params[0] + '&apiKey=' + process.env.WALMART_KEY;
-  console.log(urlString)
+  console.log(urlString);
   console.log('Routing Walmart request for', request.params[0]);
   (requestProxy({
     url: urlString
