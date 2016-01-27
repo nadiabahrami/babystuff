@@ -7,7 +7,8 @@ function Result (data) {
   this.name = data.name,
   this.modelNumber = data.modelNumber,
   this.shortDescription = data.shortDescription,
-  this.customerRatingImage = data.customerRatingImage
+  this.customerRatingImage = data.customerRatingImage,
+
 };
 resultArray.badItem = function(result){
   if(cpsc.userCompare === 'not found'){
@@ -34,7 +35,7 @@ resultArray.badItem = function(result){
 };
 
 Result.prototype.recallDisplay = function(result) {
-  if (cpsc.userCompare === "found") {
+  if (cpsc.userCompare === entrieswithUPC(check) {
     var template = $("#searches").html();  
     var compiled = Handlebars.compile(template);  
     var data = {
@@ -42,12 +43,12 @@ Result.prototype.recallDisplay = function(result) {
         "name": this.name,
         "modelNumber": this.modelNumber,
         "shortDescription": this.shortDescription,
-        "customerRatingImage": this.customerRatingImage
+        "customerRatingImage": this.customerRatingImage,
       };
     var renderedHTML = compiled(data);
     return renderedHTML;
 } else {
-  console.log("not found");
+  console.log('not found');
 }
 };
 walmart.all.forEach(function(element) {
