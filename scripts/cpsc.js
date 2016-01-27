@@ -82,14 +82,15 @@ cpsc.userCompare = function(filteredArray, userUPC){// this function takes the u
 
   var temp = [];
   temp = cpsc.sort(filteredArray);
-  if(temp.indexOf(userUPC)<0){
+  var check = temp.indexOf(userUPC);
+  if(check<0){
     console.log(userUPC);
     console.log("notfound");
     return "not found";
   }else{
     console.log("found");
     console.log(userUPC);
-    return "found";
+    return filteredArray[check];
   }
 };
 
