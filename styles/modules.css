@@ -13,8 +13,9 @@
     margin: 0px auto;
     padding: 20px 0px 20px 0px;
 }
-#home{
-    padding: 70px 30px 70px 30px;
+
+#home {
+    /*padding: 70px 30px 70px 30px;*/
     margin: 0px auto;
     background: #7986CB;
     color: floralwhite;
@@ -40,9 +41,27 @@ body{
   outline: 1px red solid;
 }
 
-@media only screen and (min-width: 640px){
-  #home {
-    background: url(/images/BabyHeader.jpg);
-    width: 100%;
-    background-repeat: no-repeat;
+
+.flag {
+  width:25%;
 }
+
+
+@media only screen and (min-width: 640px){
+  body{
+    background-color: #F7F4F6;
+  }
+
+  #home .right {
+    height:30em;
+    background: url(/images/BabyHeader.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    color: black;
+  }
+
+  #home {
+    background-color: #F7F4F6;
+    height: 30em;
+  }

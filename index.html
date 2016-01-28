@@ -5,15 +5,25 @@
   	<meta http-equiv="=X-UA-Compatible" content="IE=edge">
   	<meta name="Viewport" content="width=device-width,initial-scale=1">
     <title>BabySafe</title>
+    <link href='https://fonts.googleapis.com/css?family=Zeyada' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="vendor/scripts/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/layouts.css">
     <link rel="stylesheet" href="./styles/modules.css">
     <title>BabySafe</title>
     <script id="rsltPic" type= "text/x-handlebars-tempalte">
-        <div><img src="{{imgresponse}}"/></div>
-        <p>Your UPC search of {{searchUPC}} is {{{recommendation}}}</p>
+      <div><img src="{{imgresponse}}" class="flag"/></div>
+      <p id ="clause">Your UPC search of {{searchUPC}} is {{{recommendation}}}</p>
+    </script>
+    <script id="recallHit" type= "text/x-handlebars-template">
+      <h3>ITEM RECALLED</h3>
+      <p>Your search of {{searchUPC}} found an item titled "{{title}}"</p>
+      <div><img src="{{thumbnail}}" class="flag"/></div>
+      <p>To return and possibly receive a refund:</p>
+      <p>{{repair}}</p>
     </script>
     <script id="searches" type="text/x-handlebars-template">​
       <img src="{{thumbnailImage}}">
@@ -49,12 +59,15 @@
     </header>
     <main>
       <section id="home">
-        <div id="right"
+
+        <div class="right">
+          <h1>Baby Safe</h1>
+          <h2>Play with Peace of Mind</h2>
+          <p>Enter a product UPC to check for national recall status.</p>
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-12">
-            <!-- <img src="images/babyHeader.jpg" alt="image header" id="headerImage"/> -->
-              <form class="navbar-form  pull-right" role="search">
+              <form class="navbar-form  pull-left" role="search">
                 <div class="form-group">
                   <label class="sr-only" for="seachText"></label>
                   <input type="text" class="form-control" id="searchText" maxlength="12" pattern="[0-9]{12}" title="Enter a UPC number">
@@ -64,8 +77,10 @@
             </div>
           </div>
         </div>
+
+      </div>
       </section>
-      <section id="result">Your results</section>
+      <section id="result"></section>
       <section id ="img"></section>
       <section id ="top"></section>
       <section id ="bottom"></section>
@@ -96,14 +111,14 @@
     <footer class="row-footer">
       <div class="container">
         <div class="row">
-          <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+          <!-- <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
             <h5>Links</h5>
             <ul class="list-unstyled">
               <li><a href="#">Home</a></li>
               <li><a href="#">About</a></li>
               <li><a href="#">Contact</a></li>
             </ul>
-          </div>
+          </div> -->
           <div class="col-xs-12">
             <p style="padding:10px;"></p>
             <p align=center>© Copyright 2016 Baby Safe | <a href="terms.html">Terms &amp; Conditions</a></p>
@@ -124,7 +139,9 @@
     <script src="scripts/localStorageData.js"></script>
     <script src="scripts/sears.js"></script>
     <script src="scripts/kmart.js"></script>
+    <script src="scripts/resultsView.js"></script>
     <script src="scripts/results.js"></script>
+
     <script>
       cpsc.getRecalls();
     </script>
