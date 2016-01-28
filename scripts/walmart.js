@@ -1,7 +1,11 @@
 (function(module) {
+
   var walmart = {};
   walmart.all = [];
   walmart.upc = {};
+
+  var walmartDataArray=[];
+  var textarr=[];
 
   walmart.similarRequest = function(query) {
     $.ajax({
@@ -18,6 +22,15 @@
     });
   };
 
+  function showWalmartInfo() {
+    walmartDataArray.forEach(function(ele) {
+      textarr.push(new Display(ele));
+    });
+    textarr.forEach(function(a){
+      $('#bottom').append(a.recallDisplay(1)); // Force "else" to run
+    });
+  }
+
   walmart.upcRequest = function(upc) {
     $.ajax({
       type: 'GET',
@@ -26,8 +39,9 @@
       jsonp: 'callback',
       dataType: 'jsonp',
       success: function(data){
-        console.log(data.items);
         cpsc.getMfgr(data.items[0]);
+        walmartDataArray.push(data.items[0]);
+        showWalmartInfo(walmartDataArray);
       }
     });
   };

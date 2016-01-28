@@ -1,27 +1,27 @@
-(function(module) {
-  var walmartView = {};
 
-  var toScreen = function() {
-    var $results = $('#walmart');
-
-    $results.find('ul').empty();
-    $results.show().siblings().hide();
+(function(module){
+  function Display(data) {
+    this.thumbnailImage = data.thumbnailImage,
+    this.name = data.name,
+    this.shortDescription = data.shortDescription,
+    this.customerRatingImage = data.customerRatingImage
   };
-
-  var render = function(pull) {
-    console.log(pull);
-    return $('<li>').html('walmart');
+  Display.prototype.recallDisplay = function(result){
+  if (!result) {
+  }else {
+    var template = $('#searches').html();  
+    var compiled = Handlebars.compile(template);  
+    var data = {
+        "thumbnailImage": this.thumbnailImage,
+        "name": this.name,
+        "shortDescription": this.shortDescription,
+        "customerRatingImage": this.customerRatingImage
+      };
+      var renderedHTML = compiled(data);
+      return renderedHTML;
+      $('#bottom').empty();
+      $('#bottom').html(renderedHTML);
+    }
   };
-
-  walmartView = function() {
-    console.log(walmart);
-    toScreen();
-
-    $('#walmart ul').append(
-      walmart.with('name').map(render)
-    );
-    console.log(walmart);
-  };
-
-  module.walmartView = walmartView;
+  module.Display = Display;
 })(window);
