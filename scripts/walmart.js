@@ -1,7 +1,12 @@
 (function(module) {
+
+  console.log('Inside walmart IFFE.')
   var walmart = {};
   walmart.all = [];
   walmart.upc = {};
+
+  var testarray=[];
+  var textarr=[];
 
   walmart.similarRequest = function(query) {
     $.ajax({
@@ -18,6 +23,17 @@
     });
   };
 
+    function foo(x) {
+      testarray.forEach(function(ele) {
+        textarr.push(new Display(ele));
+        console.log('textarr = ' + textarr);
+      });
+
+      textarr.forEach(function(a){
+        $('#bottom').append(a.recallDisplay(1)); // Force "else" to run
+      });
+    } // foo()
+
   walmart.upcRequest = function(upc) {
     $.ajax({
       type: 'GET',
@@ -26,8 +42,15 @@
       jsonp: 'callback',
       dataType: 'jsonp',
       success: function(data){
-        console.log(data.items);
+        console.log('data.items');
+        console.log(data.items[0]);
         cpsc.getMfgr(data.items[0]);
+        console.log('back');
+        console.log(data.items[0]);
+        testarray.push(data.items[0]);
+        console.log('this is text array: + ' + testarray);
+        console.log(testarray);
+        foo(data.items[0]);
       }
     });
   };
