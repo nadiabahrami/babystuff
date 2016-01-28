@@ -16,14 +16,14 @@ resultArray.flagProduction = function(result){
    var render = compile(data);
    $('#img').append(render);
  }else{
+   $('#img p').empty();
    var template = $("#rsltPic").html();
    var compile = Handlebars.compile(template);
    var data = {
        "imgresponse":"/images/Red.png",
-       "searchUPC":objData.active,
-       "recommendation": "<p>RECALLED.  We would not recommend purchasing this object.</p>"
      };
    var render = compile(data);
+   $('#img p').empty();
    $('#img').html(render);
    resultsView.handleDisplay(result);
  }

@@ -1,28 +1,23 @@
 (function(module){
+
   var resultsView= {};
 
-  function recalledItem (data) {
-    this.thumbnailImage = data.thumbnailImage,
-    this.name = data.name,
-    this.shortDescription = data.shortDescription,
-    this.customerRatingImage = data.customerRatingImage
-  };
-
-  recalledItem.prototype.handleDisplay = function(result){
-    if (result === false) {
-        console.log('not found');
-    }else {
-      var template = $('#top').html();  
-      var compiled = Handlebars.compile(template);  
-      var data = {
-          'thumbnailImage': this.thumbnailImage,
-          'name': this.name,
-          'shortDescription': this.shortDescription,
-          'customerRatingImage': this.customerRatingImage
+  resultsView.handleDisplay = function(result){
+    console.log(result);
+    console.log(result.Images[0].URL);
+    console.log(result.Title);
+    console.log('handleDisplay');
+    $('#top').empty();
+      var template = $('#recallHit').html();  
+      var compile = Handlebars.compile(template);        var data = {
+          'thumbnail': result.Images[0].URL,
+          'title': result.Title,
+          'searchUPC': objData.active,
+          'repair': result.Remedies[0].Name
         };
-      var renderedHTML = compiled(data);
-      return renderedHTML;
-    }
+      var render = compile(data);
+    $('#top').html(render);
+    console.log("done");
   };
 
 
