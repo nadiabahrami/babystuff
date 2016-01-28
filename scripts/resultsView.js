@@ -3,10 +3,6 @@
   var resultsView= {};
 
   resultsView.handleDisplay = function(result){
-    console.log(result);
-    console.log(result.Images[0].URL);
-    console.log(result.Title);
-    console.log('handleDisplay');
     $('#top').empty();
       var template = $('#recallHit').html();  
       var compile = Handlebars.compile(template);        var data = {
@@ -17,10 +13,7 @@
         };
       var render = compile(data);
     $('#top').html(render);
-    console.log("done");
   };
-
-
 
   module.resultsView = resultsView;
 })(window);
