@@ -58,10 +58,10 @@
     console.log(replies);
   };
 
-
   cpsc.controller = function(upc){
     var upcResult = cpsc.productUPC(cpsc.all);
     var cpscSearch = cpsc.userCompare(upcResult, upc);
+    resultArray.flagProduction(cpscSearch);
     var productInfo = walmart.upcRequest(upc);
 
 

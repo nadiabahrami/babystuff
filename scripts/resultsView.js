@@ -1,17 +1,19 @@
 (function(module){
+
   var resultsView= {};
 
-
-    }
-      //display to user item has been recalled and should not be purchased
-      //Run function to display alternates
-
-
-      //display to user item is safe and can be purchsed
+  resultsView.handleDisplay = function(result){
+    $('#top').empty();
+      var template = $('#recallHit').html();  
+      var compile = Handlebars.compile(template);        var data = {
+          'thumbnail': result.Images[0].URL,
+          'title': result.Title,
+          'searchUPC': objData.active,
+          'repair': result.Remedies[0].Name
+        };
+      var render = compile(data);
+    $('#top').html(render);
   };
+
   module.resultsView = resultsView;
 })(window);
-
-
-(cpsc.userCompare === "true"){
-  $('#errorMsg').show();
