@@ -6,7 +6,7 @@
   walmartUpcData = [];
   walmart.upc = {};
   var recallMnfData=[];
-
+  var checkData = false;
   walmart.similarRequest = function(query, callback) {
     $.get('/walmart/search?query=' + query + '&format=json&categoryId=5427')
     .done(function(data) {
@@ -24,6 +24,7 @@
       if (data.items) {
         walmart.showWalmartInfo(data.items[0]);
         cpsc.getMfgr(data.items[0]);
+        checkData = true;
       } else {
         console.log('This item does not exist in the WalMart database');
         $('#errorMsg').show();
