@@ -3,7 +3,8 @@
   objData.dataArray = [];
   objData.active;
   $('#btn_search').on('click',function(){
-    $('#errorMsg').hide() 
+    $('#errorMsg').hide()
+    $('#bottom').empty();
     var textBoxValue = $('#searchText').val();
     if (localStorage.searchResult) {
       objData.dataArray = JSON.parse(localStorage.getItem('searchResult'));

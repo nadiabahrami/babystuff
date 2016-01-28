@@ -19,8 +19,6 @@
       };
       var renderedHTML = compiled(data);
       return renderedHTML;
-      // $('#bottom').empty();
-      // $('#bottom').html(renderedHTML);
     }
   };
   module.Display = Display;
