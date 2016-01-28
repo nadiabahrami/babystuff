@@ -1,4 +1,6 @@
 (function(module){// search recalls
+  console.log('Inside cpsc IFFE');
+
   var cpsc = {};
   cpsc.all = [];
 
@@ -22,17 +24,20 @@
   };
 
   cpsc.sort = function(upcData, upc){
-    var replies = upcData.filter(function(entry){
-      var upcObjs = entry.ProductUPCs.filter(function(upcObj){
-        return upc === upcObj.UPC;
-      });
-      if (upcObjs.length > 0) {
-        return entry;
-      } else {
-        return false;
-      }
-    });
-  };
+   var replies = upcData.filter(function(entry){
+     var upcObjs = entry.ProductUPCs.filter(function(upcObj){
+       return upc === upcObj.UPC;
+     });
+     if (upcObjs.length > 0) {
+       return entry;
+     }
+   });
+   if (replies.length > 0) {
+     return replies;
+   } else {
+     return false;
+   }
+ };
 
   // cpsc.sort = function(entries){
   //   var upcArray = [];
@@ -74,8 +79,8 @@
 
   cpsc.controller = function(upc){
     var upcResult = cpsc.productUPC(cpsc.all);
-    resultArray.flagProduction(cpscSearch);
     var cpscSearch = cpsc.sort(upcResult, upc);
+    resultArray.flagProduction(cpscSearch);
     var productInfo = walmart.upcRequest(upc);
   };
 

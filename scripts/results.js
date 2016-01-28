@@ -3,6 +3,7 @@
 var resultArray = {};
 
 resultArray.flagProduction = function(result){
+  console.log(result);
   $('#img').empty();
  if(result === false){
    $('#top').empty();
