@@ -27,9 +27,11 @@
     </script>
     <script id="searches" type="text/x-handlebars-template">​
       <img src="{{thumbnailImage}}">
-      <p> {{name}} </p>​
-      <p> {{modelNumber}} </p>
-      <p> {{shortDescription}} </p>
+      <p>{{name}}</p>​
+      <p>{{Manufacturers}}</p>
+      <p>{{modelNumber}}</p>
+      <p>{{shortDescription}}</p>
+      <a href="{{URL}}" target="_blank">{{URL}}</a>
       <img src="{{customerRatingImage}}">
 ​    </script>
   </head>
@@ -141,6 +143,8 @@
     <script src="scripts/kmart.js"></script>
     <script src="scripts/resultsView.js"></script>
     <script src="scripts/results.js"></script>
+    <script src="scripts/recalMnfView.js"></script>
+
     <script>
       cpsc.getRecalls();
     </script>
