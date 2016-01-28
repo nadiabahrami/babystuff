@@ -35,7 +35,7 @@
     walmartUpcData.length = 0;
     walmartUpcData.push(new Display(data));
     walmartUpcData.forEach(function(a){
-      $('#bottom').append(a.recallDisplay(1));
+      $('#review').append(a.recallDisplay(1));
     });
   }
 
@@ -45,7 +45,7 @@
       recallMnfData.push(new DisplayRecall(ele));
     });
     recallMnfData.forEach(function(a){
-      $('#bottom').append(a.recallMnfDisplay(1));
+      $('#recalls').append(a.recallMnfDisplay(1));
       Display.setTeasers();
     });
   }
