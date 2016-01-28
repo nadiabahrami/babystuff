@@ -21,7 +21,6 @@
   walmart.upcRequest = function(upc, callback) {
     $.get('/walmart/search?query=' + upc)
     .done(function(data){
-      // console.log(data);
       if (data.items) {
         cpsc.getMfgr(data.items[0]);
         console.log(data.items[0]);
@@ -33,8 +32,6 @@
     });
   };
 
-
-
   function showWalmartInfo() {
     walmartDataArray.forEach(function(ele) {
       textarr.push(new Display(ele));
@@ -45,20 +42,13 @@
   }
 
   walmart.showMnfRecall = function(replies) {
-    console.log('this is showMnfRecall');
-    console.log(replies);
     replies.forEach(function(ele) {
-      console.log('the ele is :////////');
-      console.log(ele);
-      console.log('recall data is');
       textarr2.push(new DisplayRecall(ele));
-      console.log(textarr2);
     });
     textarr2.forEach(function(a){
       $('#bottom').append(a.recallMnfDisplay(1)); // Force "else" to run
     });
   }
-
 
   module.walmart = walmart;
 })(window);

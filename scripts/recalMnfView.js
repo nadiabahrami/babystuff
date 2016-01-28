@@ -1,9 +1,10 @@
 (function(module){
   function DisplayRecall(data) {
-    // this.thumbnailImage = data.Images[0].URL,
+    // this.thumbnailImage = data.Manufacturers[0].Name,
+    this.Manufacturers = data.Manufacturers[0].Name,
     this.name = data.Title,
-    this.shortDescription = data.Description
-    // this.customerRatingImage = data.Retailers[0].Name
+    this.shortDescription = data.Description,
+    this.URL = data.URL
   };
   DisplayRecall.prototype.recallMnfDisplay = function(result){
     var template = $('#searches').html();  
@@ -12,13 +13,12 @@
         "thumbnailImage": this.thumbnailImage,
         "name": this.name,
         "shortDescription": this.shortDescription,
-        "customerRatingImage": this.customerRatingImage
+        "customerRatingImage": this.customerRatingImage,
+        "Manufacturers":this.Manufacturers,
+        "URL":this.URL
       };
       var renderedHTML = compiled(data);
       return renderedHTML;
-      // $('#bottom').empty();
-      // $('#bottom').html(renderedHTML);
-
   };
   module.DisplayRecall = DisplayRecall;
 })(window);
