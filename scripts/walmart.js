@@ -6,6 +6,7 @@
 
   var walmartDataArray=[];
   var textarr=[];
+  var textarr2=[];
 
   walmart.similarRequest = function(query) {
     $.ajax({
@@ -22,15 +23,6 @@
     });
   };
 
-  function showWalmartInfo() {
-    walmartDataArray.forEach(function(ele) {
-      textarr.push(new Display(ele));
-    });
-    textarr.forEach(function(a){
-      $('#bottom').append(a.recallDisplay(1)); // Force "else" to run
-    });
-  }
-
   walmart.upcRequest = function(upc) {
     $.ajax({
       type: 'GET',
@@ -42,10 +34,28 @@
         cpsc.getMfgr(data.items[0]);
         walmartDataArray.push(data.items[0]);
         showWalmartInfo(walmartDataArray);
+        recallMnfData(cpsc.recallMnfData);
       }
     });
   };
 
+    function showWalmartInfo() {
+      walmartDataArray.forEach(function(ele) {
+        textarr.push(new Display(ele));
+      });
+      textarr.forEach(function(a){
+        $('#bottom').append(a.recallDisplay(1)); // Force "else" to run
+      });
+    }
+
+    function recallMnfData() {
+      cpsc.recallMnfData.forEach(function(ele) {
+        textarr2.push(new Display(ele));
+      });
+      textarr2.forEach(function(a){
+        $('#bottom').append(a.recallDisplay(1)); // Force "else" to run
+      });
+    }
   // walmart.similarRequest = function(query, callback) {
   //   $.get('/walmart/query=' + query + '&format=json&categoryId=5427')
   //   .done(function(data) {
