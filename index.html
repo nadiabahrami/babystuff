@@ -26,13 +26,16 @@
       <p>{{repair}}</p>
     </script>
     <script id="searches" type="text/x-handlebars-template">​
-      <img src="{{thumbnailImage}}">
-      <p>{{name}}</p>​
-      <p>{{Manufacturers}}</p>
-      <p>{{modelNumber}}</p>
-      <p>{{shortDescription}}</p>
-      <a href="{{URL}}" target="_blank">{{URL}}</a>
-      <img src="{{customerRatingImage}}">
+      <article class="result">
+        <img src="{{thumbnailImage}}">
+        <p>{{name}}</p>​
+        <p>{{Manufacturers}}</p>
+        <p>{{modelNumber}}</p>
+        <section class="description">{{shortDescription}}</section>
+        <a href="#" class="more-info">Full Recall Details &rarr;</a>
+        <a href="{{URL}}" target="_blank">{{URL}}</a>
+        <img src="{{customerRatingImage}}">
+      </article>
 ​    </script>
   </head>
   <body>
@@ -62,6 +65,7 @@
         <section id ="top"></section>
         <section id ="bottom"></section>
       </section>
+
     <section>
       <div class="col-xs-12" id="errorMsg">
         <blockquote class ="well col-xs-6">

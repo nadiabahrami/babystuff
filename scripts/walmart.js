@@ -46,6 +46,7 @@
     });
     recallMnfData.forEach(function(a){
       $('#bottom').append(a.recallMnfDisplay(1));
+      Display.setTeasers();
     });
   }
 
