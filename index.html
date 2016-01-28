@@ -61,7 +61,6 @@
     </header> -->
     <main>
       <section id="home">
-
         <div class="right">
           <h1>Baby Safe</h1>
           <h2>Play with Peace of Mind</h2>
@@ -82,10 +81,11 @@
 
       </div>
       </section>
-      <section id="result"></section>
-      <section id ="img"></section>
-      <section id ="top"></section>
-      <section id ="bottom"></section>
+      <section id="result" href="/results" class="page">
+        <section id ="img"></section>
+        <section id ="top"></section>
+        <section id ="bottom"></section>
+      </section>
     <section>
       <div class="col-xs-12" id="errorMsg">
         <blockquote class ="well col-xs-6">
@@ -94,11 +94,11 @@
       </div>
     </section>
 
-      <!-- <section id="video">
+      <section href="/info" id="video" class="page">
         <iframe src="https://www.youtube.com/embed/55Rmfpacpno" frameborder="0" allowfullscreen></iframe>
-      </section> -->
+      </section>
 
-      <section id="about"></section>
+      <section id="about" href="/about" class="page">ABOUT</section>
     </main>
 
     <footer class="row-footer">
@@ -135,6 +135,7 @@
     <script src="scripts/resultsView.js"></script>
     <script src="scripts/results.js"></script>
     <script src="scripts/recalMnfView.js"></script>
+    <script src="scripts/pageDisplay.js"></script>
     <script src="scripts/routes.js"></script>
     <script>
       cpsc.getRecalls();
