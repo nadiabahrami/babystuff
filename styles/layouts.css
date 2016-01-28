@@ -10,3 +10,7 @@ footer li {
 .flag {
   width:30%;
 }
+
+#errorMsg{
+  background-color: #F7F4F6;
+}
