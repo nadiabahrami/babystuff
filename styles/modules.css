@@ -47,10 +47,13 @@ body{
 
 
 @media only screen and (min-width: 640px){
+  body{
+    background-color: #F7F4F6;
+  }
+
   #home .right {
     height:30em;
     background: url(/images/BabyHeader.jpg);
-    /*width: 100%;*/
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;

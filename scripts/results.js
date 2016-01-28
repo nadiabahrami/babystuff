@@ -5,6 +5,7 @@ var resultArray = {};
 resultArray.flagProduction = function(result){
   $('#img').empty();
  if(result === false){
+   $('#top').empty();
    var template = $("#rsltPic").html();
    var compile = Handlebars.compile(template);
    var data = {
