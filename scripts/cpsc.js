@@ -66,7 +66,6 @@
     var cpscSearch = cpsc.userCompare(upcResult, upc);
     resultArray.flagProduction(cpscSearch);
     var productInfo = walmart.upcRequest(upc);
-    // Display.recallDisplay(productInfo);
   };
 
   cpsc.getMfgr = function (item){

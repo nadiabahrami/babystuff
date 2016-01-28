@@ -23,16 +23,14 @@
     });
   };
 
-    function foo(x) {
-      testarray.forEach(function(ele) {
-        textarr.push(new Display(ele));
-        console.log('textarr = ' + textarr);
-      });
-
-      textarr.forEach(function(a){
-        $('#bottom').append(a.recallDisplay(1)); // Force "else" to run
-      });
-    } // foo()
+  function showWalmartInfo(x) {
+    testarray.forEach(function(ele) {
+      textarr.push(new Display(ele));
+    });
+    textarr.forEach(function(a){
+      $('#bottom').append(a.recallDisplay(1)); // Force "else" to run
+    });
+  }
 
   walmart.upcRequest = function(upc) {
     $.ajax({
@@ -42,15 +40,9 @@
       jsonp: 'callback',
       dataType: 'jsonp',
       success: function(data){
-        console.log('data.items');
-        console.log(data.items[0]);
         cpsc.getMfgr(data.items[0]);
-        console.log('back');
-        console.log(data.items[0]);
         testarray.push(data.items[0]);
-        console.log('this is text array: + ' + testarray);
-        console.log(testarray);
-        foo(data.items[0]);
+        showWalmartInfo(data.items[0]);
       }
     });
   };
