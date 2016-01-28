@@ -63,7 +63,11 @@
       var mfgrs = entry.Manufacturers.filter(function(mfgr){
         return mfgrName === mfgr.Name;
       });
-      if (mfgrs.length > 0) return entry;
+      if (mfgrs.length > 0) {
+        return entry;
+      } else {
+        return false;
+      }
     });
     console.log(replies);
   };
