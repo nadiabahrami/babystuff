@@ -22,7 +22,7 @@
 }
 
 body{
-    padding:50px 0px 0px 0px;
+    padding:0;
 }
 
 .navbar-inverse {
@@ -47,10 +47,11 @@ body{
 }
 
 
-@media only screen and (min-width: 640px){
+@media only screen and (min-width: 980px){
   body{
     background-color: #F7F4F6;
     padding-top: 0;
+    margin-top: 0;
   }
 
   #home .right {
@@ -60,11 +61,13 @@ body{
     background-size: contain;
     background-position: right;
     color: black;
+    border-bottom: 5px solid black;
   }
 
   #home {
     background-color: #F7F4F6;
     height: 30em;
+    border-bottom: 5px solid black;
   }
 
   .right {
