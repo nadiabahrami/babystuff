@@ -47,7 +47,8 @@
       textarr2.push(new DisplayRecall(ele));
     });
     textarr2.forEach(function(a){
-      $('#bottom').append(a.recallMnfDisplay(1)); // Force "else" to run
+      $('#bottom').append(a.recallMnfDisplay(1));
+      Display.setTeasers();
     });
   }
 

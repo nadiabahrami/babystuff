@@ -23,5 +23,16 @@
       // $('#bottom').html(renderedHTML);
     }
   };
+
+  Display.setTeasers = function() {
+  $('.description').hide();
+
+  $('#bottom').on('click', 'a.more-info', function(event) {
+    event.preventDefault();
+    $(this).parent().find('.description').fadeIn();
+    $(this).hide();
+  });
+};
+
   module.Display = Display;
 })(window);
