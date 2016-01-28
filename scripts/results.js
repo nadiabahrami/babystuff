@@ -3,6 +3,7 @@
 var resultArray = {};
 
 resultArray.flagProduction = function(result){
+  $('#img').empty();
  console.log(result);
  if(result === false){
    var template = $("#rsltPic").html();
@@ -10,7 +11,7 @@ resultArray.flagProduction = function(result){
    var data = {
        "imgresponse":"/images/Green.png",
        "searchUPC":objData.active,
-       "recommendation": "<p>Not a known recalled item.  We would not recommend purchasing this object.</p>"
+       "recommendation": "<p>Not a known recalled item.</p>"
      };
    var render = compile(data);
    $('#img').append(render);
@@ -23,7 +24,7 @@ resultArray.flagProduction = function(result){
        "recommendation": "<p>RECALLED.  We would not recommend purchasing this object.</p>"
      };
    var render = compile(data);
-   $('#img').append(render);
+   $('#img').html(render);
  }
 };
 
