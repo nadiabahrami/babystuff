@@ -28,13 +28,13 @@
     <script id="searches" type="text/x-handlebars-template">​
       <article class="result">
         <img src="{{thumbnailImage}}">
-        <p>{{name}}</p>​
-        <p>{{Manufacturers}}</p>
-        <p>{{modelNumber}}</p>
+        <img src="{{customerRatingImage}}">
+        <h3>{{name}}</h3>
+        <h4>{{Manufacturers}}</h4>
+        <h4>{{modelNumber}}</h4>
         <section class="{{descClass}}">{{shortDescription}}</section>
         <a href="#" class="more-info">{{{moreInfo}}}</a>
         <a href="{{URL}}" target="_blank">{{URL}}</a>
-        <img src="{{customerRatingImage}}">
       </article>
 ​    </script>
   </head>
@@ -59,13 +59,16 @@
           </div>
         </div>
       </section>
-
       <section id="result" href="/results" class="page">
         <section id ="img"></section>
         <section id ="top"></section>
-        <section id ="bottom"></section>
+        <section id ="bottom">
+          <h2>Product Review by Walmart:</h2>
+          <div id="review"></div>
+          <h2>Company recalls</h2>
+          <div id="recalls"></div>
+        </section>
       </section>
-
     <section>
       <div class="col-xs-12" id="errorMsg">
         <blockquote class ="well col-xs-6">
@@ -73,13 +76,11 @@
         </blockquote>
       </div>
     </section>
-
       <section href="/info" id="video" class="page">
         <iframe src="https://www.youtube.com/embed/55Rmfpacpno" frameborder="0" allowfullscreen></iframe>
       </section>
       <section id="about" href="/about" class="page">ABOUT</section>
     </main>
-
     <footer class="row-footer">
       <div class="container">
         <div class="row">
@@ -98,7 +99,6 @@
         </div>
       </div>
     </footer>
-
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/black-tie/jquery-ui.css" />

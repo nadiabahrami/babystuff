@@ -4,7 +4,7 @@
   objData.active;
   $('#btn_search').on('click',function(){
     $('#errorMsg').hide()
-    $('#bottom').empty();
+    $('#bottom > div').empty();
     var textBoxValue = $('#searchText').val();
     if (localStorage.searchResult) {
       objData.dataArray = JSON.parse(localStorage.getItem('searchResult'));
