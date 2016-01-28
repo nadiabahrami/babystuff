@@ -41,7 +41,9 @@ body{
   outline: 1px red solid;
 }
 
-.jumbotron {
-  background: url(/images/BabyHeader.jpg);
-  width: 100%;
-  background-repeat: no-repeat;
+@media only screen and (min-width: 640px){
+  #home {
+    background: url(/images/BabyHeader.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+}
