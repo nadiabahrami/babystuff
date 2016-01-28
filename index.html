@@ -5,14 +5,17 @@
   	<meta http-equiv="=X-UA-Compatible" content="IE=edge">
   	<meta name="Viewport" content="width=device-width,initial-scale=1">
     <title>BabySafe</title>
+    <link href='https://fonts.googleapis.com/css?family=Zeyada' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="vendor/scripts/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/layouts.css">
     <link rel="stylesheet" href="./styles/modules.css">
     <title>BabySafe</title>
     <script id="rsltPic" type= "text/x-handlebars-tempalte">
-        <div><img src="{{imgresponse}}"/></div>
+        <div><img src="{{imgresponse}}" class="flag"/></div>
         <p>Your UPC search of {{searchUPC}} is {{{recommendtion}}}</p>
     </script>
     <script id="searches" type="text/x-handlebars-template">​
@@ -49,7 +52,10 @@
     </header>
     <main>
       <section id="home">
-        <div id="right"
+        <div class="right">
+          <h1>Baby Safe</h1>
+          <h2>Play with Peace of Mind</h2>
+          <p>Enter a product UPC to check for national recall status.</p>
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-12">
@@ -64,6 +70,7 @@
             </div>
           </div>
         </div>
+      </div>
       </section>
       <section id="result">Your results</section>
       <section id ="img"></section>

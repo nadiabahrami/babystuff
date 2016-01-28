@@ -61,7 +61,7 @@
   cpsc.controller = function(upc){
     var upcResult = cpsc.productUPC(cpsc.all);
     var cpscSearch = cpsc.userCompare(upcResult, upc);
-    flagProduction(cpscSearch);
+    resultArray.flagProduction(cpscSearch);
     var productInfo = walmart.upcRequest(upc);
 
 
