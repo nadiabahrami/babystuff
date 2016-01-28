@@ -14,7 +14,6 @@
     });
   };
 
-//this function filters for ProductUPC proerties
   cpsc.productUPC = function(dataAll){
     var upcFilter = dataAll.filter(function(dataEntry){
       return dataEntry.ProductUPCs.length !== 0;
@@ -31,7 +30,6 @@
     return upcArray;
   };
 
-// this function takes the upc from user and compare against the array fed into it
   cpsc.userCompare = function(entriesWithUPC, userUPC){
     var upcArr = [];
     upcArr = cpsc.sort(entriesWithUPC);
@@ -58,14 +56,10 @@
     console.log(replies);
   };
 
-
   cpsc.controller = function(upc){
     var upcResult = cpsc.productUPC(cpsc.all);
     var cpscSearch = cpsc.userCompare(upcResult, upc);
     var productInfo = walmart.upcRequest(upc);
-
-
-
   };
 
   cpsc.getMfgr = function (item){
