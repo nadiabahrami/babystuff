@@ -26,7 +26,11 @@
       var upcObjs = entry.ProductUPCs.filter(function(upcObj){
         return upc === upcObj.UPC;
       });
-      if (upcObjs.length > 0) return entry;
+      if (upcObjs.length > 0) {
+        return entry;
+      } else {
+        return false;
+      }
     });
   };
 
