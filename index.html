@@ -72,7 +72,7 @@
               <form class="navbar-form  pull-left" role="search">
                 <div class="form-group">
                   <label class="sr-only" for="seachText"></label>
-                  <input type="text" class="form-control" id="searchText" maxlength="12" pattern="[0-9]{12}" title="Enter a UPC number">
+                  <input type="text" class="form-control" id="searchText" min="12" pattern=".{0-9}.{12,}" required title="UPC must be 12 digits in length" pattern=".{0}|.{8,}"></input>
                 </div>
                 <button type="button" class="btn btn-info btn-md" id="btn_search">Search</button>
               </form>
