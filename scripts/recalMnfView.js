@@ -15,7 +15,9 @@
         "shortDescription": this.shortDescription,
         "customerRatingImage": this.customerRatingImage,
         "Manufacturers":this.Manufacturers,
-        "URL":this.URL
+        "URL":this.URL,
+        "descClass": 'description',
+        "moreInfo": 'Full Recall Details &rarr;'
       };
       var renderedHTML = compiled(data);
       return renderedHTML;
