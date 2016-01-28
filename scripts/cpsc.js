@@ -15,10 +15,10 @@
   };
 
   cpsc.productUPC = function(dataAll){
-    var upcFilter = dataAll.filter(function(dataEntry){
+    var upcObjects = dataAll.filter(function(dataEntry){
       return dataEntry.ProductUPCs.length !== 0;
     });
-    return upcFilter;
+    return upcObjects;
   };
 
   cpsc.sort = function(entries){
@@ -26,7 +26,6 @@
     entries.forEach(function(entry){
       upcArray.push(entry.ProductUPCs[0].UPC.replace(/\s/g,''));
     });
-    // console.log(upcArray);
     return upcArray;
   };
 
@@ -44,6 +43,7 @@
       console.log(entriesWithUPC[check]);
       return entriesWithUPC[check];
     }
+    console.log(upcArr);
   };
 
   cpsc.mfgrSearch = function(mfgrName, dataAll){
@@ -67,7 +67,7 @@
     console.log(item.name.split(/\s+/).slice(0,1).join(' '));
     cpsc.mfgrSearch(item.name.split(/\s+/).slice(0,2).join(' '), cpsc.all);
     cpsc.mfgrSearch(item.name.split(/\s+/).slice(0,1).join(' '), cpsc.all);
-  }
+  };
 
   module.cpsc = cpsc;
 })(window);
