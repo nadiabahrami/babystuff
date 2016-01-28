@@ -1,5 +1,5 @@
 (function(module) {
-
+  $('#errorMsg').hide()
   var walmart = {};
   walmart.all = [];
   var walmartDataArray=[];
@@ -28,6 +28,7 @@
         showWalmartInfo(walmartDataArray);
       } else {
         console.log('This item does not exist in the WalMart database');
+        $('#errorMsg').show();
       }
     });
   };
