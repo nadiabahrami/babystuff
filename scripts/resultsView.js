@@ -4,9 +4,6 @@
 
   resultsView.handleDisplay = function(result){
     $('#top').empty();
-    console.log(result);
-    console.log(result[0].Title);
-    console.log(result[0].Images[0].URL);
       var template = $('#recallHit').html();  
       var compile = Handlebars.compile(template);  
       var data = {
