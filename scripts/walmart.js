@@ -1,11 +1,10 @@
 (function(module) {
 
-  console.log('Inside walmart IFFE.')
   var walmart = {};
   walmart.all = [];
   walmart.upc = {};
 
-  var testarray=[];
+  var walmartDataArray=[];
   var textarr=[];
 
   walmart.similarRequest = function(query) {
@@ -23,8 +22,8 @@
     });
   };
 
-  function showWalmartInfo(x) {
-    testarray.forEach(function(ele) {
+  function showWalmartInfo() {
+    walmartDataArray.forEach(function(ele) {
       textarr.push(new Display(ele));
     });
     textarr.forEach(function(a){
@@ -41,8 +40,8 @@
       dataType: 'jsonp',
       success: function(data){
         cpsc.getMfgr(data.items[0]);
-        testarray.push(data.items[0]);
-        showWalmartInfo(data.items[0]);
+        walmartDataArray.push(data.items[0]);
+        showWalmartInfo(walmartDataArray);
       }
     });
   };
