@@ -17,7 +17,7 @@
       localStorage.setItem('searchResult', JSON.stringify(objData.dataArray));
     }
     autoCompleteTextBox();
-    if(isNaN(textBoxValue)){
+    if(isNaN(textBoxValue) || textBoxValue===''){
       $('#searchText').tooltip('enable');
       $('#searchText').addClass('errorText');
     }else{
