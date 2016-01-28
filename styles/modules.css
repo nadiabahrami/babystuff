@@ -9,10 +9,17 @@
     min-height: 400px;
 }
 .row-footer{
-    background-color: #AfAfAf;
+    /*background-color: #AfAfAf;*/
+    color: white;
     margin: 0px auto;
     padding: 20px 0px 20px 0px;
+    position: fixed;
 }
+
+.col-xs-12 {
+  color: black;
+}
+
 
 #home {
     /*padding: 70px 30px 70px 30px;*/
@@ -61,13 +68,13 @@ body{
     background-size: contain;
     background-position: right;
     color: black;
-    border-bottom: 5px solid black;
+    border-bottom: 2px solid black;
   }
 
   #home {
     background-color: #F7F4F6;
     height: 30em;
-    border-bottom: 5px solid black;
+    border-bottom: 2px solid black;
   }
 
   .right {
