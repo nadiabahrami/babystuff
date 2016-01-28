@@ -25,18 +25,9 @@ resultArray.flagProduction = function(result){
      };
    var render = compile(data);
    $('#img').html(render);
+   resultsView.handleDisplay(result);
  }
 };
-
-
-//
-// walmart.all.forEach(function(element) {
-//   return resultArray.push(new Display(element))
-// });
-//
-// resultArray.forEach(function(a) {
-//   $('#result').append(a.recallDisplay());
-// });
 
 module.resultArray = resultArray;
 

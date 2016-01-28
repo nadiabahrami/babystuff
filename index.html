@@ -15,8 +15,15 @@
     <link rel="stylesheet" href="./styles/modules.css">
     <title>BabySafe</title>
     <script id="rsltPic" type= "text/x-handlebars-tempalte">
-        <div><img src="{{imgresponse}}" class="flag"/></div>
-        <p>Your UPC search of {{searchUPC}} is {{{recommendtion}}}</p>
+      <div><img src="{{imgresponse}}" class="flag"/></div>
+      <p>Your UPC search of {{searchUPC}} is {{{recommendtion}}}</p>
+    </script>
+    <script id="recallHit" type= "text/x-handlebars-template">
+      <h3>ITEM RECALLED</h3>
+      <p>Your search of {{searchUPC}} found an item titled {{title}}</p>
+      <div><img src="{{thumbnail}}" class="flag"/></div>
+      <p>To return and possibly receive a refund:</p>
+      <p>{{Repair}}</p>
     </script>
     <script id="searches" type="text/x-handlebars-template">​
       <img src="{{thumbnailImage}}">
@@ -130,7 +137,9 @@
     <script src="scripts/localStorageData.js"></script>
     <script src="scripts/sears.js"></script>
     <script src="scripts/kmart.js"></script>
+    <script src="scripts/resultsView,js"></script>
     <script src="scripts/results.js"></script>
+
     <script>
       cpsc.getRecalls();
     </script>
