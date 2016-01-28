@@ -3,6 +3,7 @@
 
   var cpsc = {};
   cpsc.all = [];
+  cpsc.recallMnfData = [];
 
   cpsc.getRecalls = function() {
     $.get('http://www.saferproducts.gov/RestWebServices/Recall?format=json', function(data){
@@ -74,7 +75,9 @@
         return false;
       }
     });
+    console.log('replies');
     console.log(replies);
+    walmart.showMnfRecall(replies);
   };
 
   cpsc.controller = function(upc){

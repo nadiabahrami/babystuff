@@ -5,6 +5,7 @@
   var walmartDataArray=[];
   var textarr=[];
   walmart.upc = {};
+  var textarr2=[];
 
   walmart.similarRequest = function(query, callback) {
     $.get('/walmart/search?query=' + query + '&format=json&categoryId=5427')
@@ -20,9 +21,10 @@
   walmart.upcRequest = function(upc, callback) {
     $.get('/walmart/search?query=' + upc)
     .done(function(data){
-      console.log(data);
+      // console.log(data);
       if (data.items) {
         cpsc.getMfgr(data.items[0]);
+        console.log(data.items[0]);
         walmartDataArray.push(data.items[0]);
         showWalmartInfo(walmartDataArray);
       } else {
@@ -39,6 +41,21 @@
     });
     textarr.forEach(function(a){
       $('#bottom').append(a.recallDisplay(1)); // Force "else" to run
+    });
+  }
+
+  walmart.showMnfRecall = function(replies) {
+    console.log('this is showMnfRecall');
+    console.log(replies);
+    replies.forEach(function(ele) {
+      console.log('the ele is :////////');
+      console.log(ele);
+      console.log('recall data is');
+      textarr2.push(new DisplayRecall(ele));
+      console.log(textarr2);
+    });
+    textarr2.forEach(function(a){
+      $('#bottom').append(a.recallMnfDisplay(1)); // Force "else" to run
     });
   }
 

@@ -1,14 +1,11 @@
-
 (function(module){
-  function Display(data) {
-    this.thumbnailImage = data.thumbnailImage,
-    this.name = data.name,
-    this.shortDescription = data.shortDescription,
-    this.customerRatingImage = data.customerRatingImage
+  function DisplayRecall(data) {
+    // this.thumbnailImage = data.Images[0].URL,
+    this.name = data.Title,
+    this.shortDescription = data.Description
+    // this.customerRatingImage = data.Retailers[0].Name
   };
-  Display.prototype.recallDisplay = function(result){
-  if (!result) {
-  }else {
+  DisplayRecall.prototype.recallMnfDisplay = function(result){
     var template = $('#searches').html();  
     var compiled = Handlebars.compile(template);  
     var data = {
@@ -21,7 +18,7 @@
       return renderedHTML;
       // $('#bottom').empty();
       // $('#bottom').html(renderedHTML);
-    }
+
   };
-  module.Display = Display;
+  module.DisplayRecall = DisplayRecall;
 })(window);
