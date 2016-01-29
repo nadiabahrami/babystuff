@@ -1,5 +1,5 @@
 page.base('/');
-// page('', home);
+page('', home);
 page('results', results);
 page('info', info);
 page('about', about);
@@ -8,9 +8,9 @@ page('terms', terms);
 
 page();
 
-// function home(){
-//   webpage.pageDisplay('');
-// }
+function home(){
+  webpage.pageDisplay('');
+}
 
 function results(){
   webpage.pageDisplay('results');
