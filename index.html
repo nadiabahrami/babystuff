@@ -61,7 +61,7 @@
               <form class="navbar-form  pull-left form-hide" role="search">
                 <div class="form-group">
                   <label class="sr-only" for="seachText"></label>
-                  <input type="text" class="form-control" id="searchText" maxlength="12" pattern=".{0-9}.{12,}" required title="UPC must be 12 digits in length" pattern=".{0}|.{8,}"></input>
+                  <input type="text" class="form-control" id="searchText" maxlength="12" pattern="\d*" required title="UPC must be 12 digits in length"></input>
                 </div>
                 <div class="form-spinner"><img src="images/spin.svg" alt=""></div>
                 <button type="button" class="btn btn-info btn-md form-button" id="btn_search">Search</button>
