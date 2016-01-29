@@ -1,5 +1,4 @@
 (function(module){// search recalls
-  console.log('Inside cpsc IFFE');
 
   var cpsc = {};
   cpsc.all = [];
@@ -56,7 +55,6 @@
         return false;
       }
     });
-    console.log('replies');
     console.log(replies);
     walmart.showMnfRecall(replies);
   };
