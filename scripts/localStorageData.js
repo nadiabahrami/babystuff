@@ -3,6 +3,8 @@
   objData.dataArray = [];
   objData.active;
   $('#btn_search').on('click',function(){
+    $('#result').hide();
+    $('.result-spinner').show();
     $('#errorMsg').hide()
     $('#bottom > div').empty();
     var textBoxValue = $('#searchText').val();

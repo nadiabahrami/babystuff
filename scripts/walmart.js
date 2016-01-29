@@ -28,6 +28,8 @@
       } else {
         console.log('This item does not exist in the WalMart database');
         $('#errorMsg').show();
+        $('.result-spinner').hide();
+        $('#result').fadeIn();
       }
     });
   };
@@ -38,6 +40,8 @@
     walmartUpcData.forEach(function(a){
       $('#review').append(a.recallDisplay(1));
     });
+    $('.result-spinner').hide();
+    $('#result').fadeIn();
   }
 
   walmart.showMnfRecall = function(replies) {
