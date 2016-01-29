@@ -33,7 +33,7 @@
         <h4>{{Manufacturers}}</h4>
         <h4>{{modelNumber}}</h4>
         <section class="{{descClass}}">{{shortDescription}}</section>
-        <a href="#" class="more-info">{{{moreInfo}}}</a>
+        <a href="#" class=" btn btn-primary btn-xs more-info">{{{moreInfo}}}</a>
         <a href="{{URL}}" target="_blank">{{URL}}</a>
       </article>
 ​    </script>
@@ -62,12 +62,44 @@
       <section id="result" href="/results" class="page">
         <section id ="img"></section>
         <section id ="top"></section>
-        <section id ="bottom">
-          <h2>Product Review by Walmart:</h2>
-          <div id="review"></div>
-          <h2>Company recalls</h2>
-          <div id="recalls"></div>
-        </section>
+
+        <div class="container">
+          <div class="row row-content">
+            <div class="col-xs-12 col-sm-12">
+              <section id ="bottom">
+                <h2>Product Review by Walmart:</h2>
+                <div id="review" class="panel panel-default"></div>
+                <h2>Company recalls</h2>
+                <div id="recalls"></div>
+              </section>
+            </div>
+          </div>
+        </div>
+
+
+
+
+          <!-- <div class="row row-content">
+            <div class="col-xs-12 col-sm-3 col-sm-push-9">
+              <p style="padding:20px;"></p>
+              <h3 align=center>Our Lipsmacking Culinary Creations</h3>
+            </div>
+          <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+            <div class="media">
+              <div class="media-left  media-middle">
+                  <a href="#"><img class="media-object img-thumbnail" src="img/uthappizza.png" alt="Uthappizza"></a>
+              </div>
+              <div class="media-body">
+                <h2 class="media-heading">Uthappizza <span class="label label-danger label-xs">Hot</span> <span class="badge">$4.99</span></h2>
+                <p>A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur                                chillies and Buffalo Paneer. </p>
+                <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      <!-- </div> -->
+
+
       </section>
     <section>
       <div class="col-xs-12" id="errorMsg">
