@@ -1,12 +1,11 @@
 (function (module) {
-$('#video').hide();
-$('#about').hide();
+$('.sections').hide();
 
 var webpage = {};
 
 webpage.pageDisplay = function(content) {
   console.log(content);
-  $('.page').hide();
+  $('.sections').hide();
   $('#' + content).show();
 }
 
