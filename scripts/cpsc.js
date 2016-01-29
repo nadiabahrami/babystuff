@@ -6,7 +6,7 @@
   cpsc.recallMnfData = [];
 
   cpsc.getRecalls = function() {
-    $('.form-hide').hide();
+    $('.form-button').hide();
     $('.form-spinner').fadeIn();
     $('.result-spinner').hide();
     $.get('http://www.saferproducts.gov/RestWebServices/Recall?format=json', function(data){
@@ -14,7 +14,7 @@
         console.log(data);
         cpsc.all = data;
         console.log(cpsc.all.length);
-        $('.form-hide').fadeIn();
+        $('.form-button').fadeIn();
         $('.form-spinner').hide();
       }else{
         alert('Recall database unavailable!');
