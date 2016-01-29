@@ -1,5 +1,5 @@
-// page.base('');
-
+page.base('');
+// page('', home);
 page('/results', result);
 page('/info', video);
 page('/about', about);
@@ -7,8 +7,12 @@ page('/about', about);
 
 page();
 
+// function home(){
+//   webpage.pageDisplay('');
+// }
+
 function result(){
-  webpage.pageDisplay('result');
+  webpage.pageDisplay('results');
 }
 
 function video(){

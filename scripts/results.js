@@ -12,7 +12,7 @@ resultArray.flagProduction = function(result){
     var data = {
       "imgresponse":"/images/Green.png",
       "searchUPC":objData.active,
-      "recommendation": "<p>not a known recalled item.</p>"
+      "recommendation": "not a known recalled item."
     };
     var render = compile(data);
     $('#img').append(render);
