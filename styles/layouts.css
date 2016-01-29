@@ -10,7 +10,19 @@ footer li {
 .flag {
   width:30%;
 }
+#img{
+  text-align:center;
+  margin-top:2%
+}
+#top{
+  text-align: center;
+}
+
+blockquote{
+    margin-left: 24.9%;
+}
 
 #errorMsg{
   background-color: #F7F4F6;
+  display:inline-block;
 }
