@@ -25,7 +25,9 @@
         walmart.showWalmartInfo(data.items[0]);
         cpsc.getMfgr(data.items[0]);
         checkData = true;
+        $('#result-header').show();
       } else {
+        $('#result-header').hide();
         console.log('This item does not exist in the WalMart database');
         $('#errorMsg').show();
         $('.result-spinner').hide();
@@ -37,7 +39,6 @@
   walmart.showWalmartInfo = function(data) {
     walmartUpcData.length = 0;
     walmartUpcData.push(new Display(data));
-    $('#result-header').show();
     walmartUpcData.forEach(function(a){
       $('#review').append(a.recallDisplay(1));
     });

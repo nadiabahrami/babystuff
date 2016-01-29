@@ -26,6 +26,7 @@ resultArray.flagProduction = function(result){
     $('#img').html(render);
     $('#clause').empty()
     resultsView.handleDisplay(result);
+    $('#result-header').hide();
   }
 };
 
