@@ -61,9 +61,10 @@
             </div>
           </div>
         </div>
+      </div>
       </section>
       <div class="result-spinner"><img src="images/spin.svg" alt=""></div>
-      <section id="result" href="/results" class="page">
+      <section id="result" href="/results" class="sections">
         <section id ="img"></section>
         <section id ="top"></section>
 
@@ -88,7 +89,8 @@
         </blockquote>
       </div>
     </section>
-      <section href="/info" id="video" class="page">
+  </section>
+      <section href="/info" id="info" class="sections">
         <div class = "container">
         <h3>Further Safety Information</h3>
         <p>The United States Consumer Product Safety Commission<a href="http://www.cpsc.gov/">(CPSC)</a> regulates the sale and manufacture of different consumer products from cribs to all-terrain vehicles. The CPSC does this by banning dangerous products, establishing safety requirements, issuing recalls of products already on the market, and researching potential hazards associated with consumer products.</p>
@@ -96,7 +98,7 @@
         <iframe src="https://www.youtube.com/embed/55Rmfpacpno" frameborder="0" allowfullscreen></iframe>
       </div>
       </section>
-      <section id="about" href="/about" class="page">ABOUT</section>
+      <section id="about" href="/about" class="sections">ABOUT</section>
     </main>
     <footer class="row-footer">
       <div class="container">
@@ -111,7 +113,7 @@
           </div> -->
           <div class="col-xs-12" align=center>
             <!-- <p style="padding:10px;"></p> -->
-            <p> © Copyright 2016 Baby Safe | <a href="terms.html">Terms &amp; Conditions</a> | <a href="./info">Additional Info on Recalls</a> | <a href="./">Home</a></p>
+            <p> © Copyright 2016 Baby Safe | <a href="/terms.html">Terms &amp; Conditions</a> | <a href="/info">Additional Info on Recalls</a> | <a href="/">Home</a></p>
           </div>
           </div>
         </div>
@@ -121,7 +123,12 @@
     <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/black-tie/jquery-ui.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="vendor/scripts/page.js"></script>
+
     <script src="vendor/scripts/handlebars-v4.0.5.js"></script>
+    <!-- <script src="vendor/scripts/page.js"></script> -->
+    <script src="scripts/pageDisplay.js"></script>
+    <script src="scripts/routes.js"></script>
     <script src="scripts/walmart.js"></script>
     <script src="scripts/cpsc.js"></script>
     <script src="vendor/scripts/page.js"></script>
@@ -132,8 +139,7 @@
     <script src="scripts/resultsView.js"></script>
     <script src="scripts/results.js"></script>
     <script src="scripts/recalMnfView.js"></script>
-    <script src="scripts/pageDisplay.js"></script>
-    <script src="scripts/routes.js"></script>
+
     <script>
       cpsc.getRecalls();
     </script>

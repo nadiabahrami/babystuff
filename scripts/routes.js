@@ -1,8 +1,9 @@
-page.base('');
+page.base('/');
 // page('', home);
-page('/results', results);
-page('/info', video);
-page('/about', about);
+page('results', results);
+page('info', info);
+page('about', about);
+page('terms', terms);
 // page('*', notFound)
 
 page();
@@ -13,19 +14,23 @@ page();
 
 function results(){
   webpage.pageDisplay('results');
-}
+};
 
-function video(){
-  webpage.pageDisplay('video');
-}
+function terms(){
+  webpage.pageDisplay('terms');
+};
+
+function info(){
+  webpage.pageDisplay('info');
+};
 
 function about(){
   webpage.pageDisplay('about');
-}
+};
 
 function notFound(){
   webpage.pageDisplay('notFound');
-}
+};
 
 function notFound() {
   console.log('Page not found. Please re-type your URL. KTHANKS.');
