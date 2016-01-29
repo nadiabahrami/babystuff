@@ -8,6 +8,7 @@
   cpsc.getRecalls = function() {
     $('.form-hide').hide();
     $('.form-spinner').fadeIn();
+    $('.result-spinner').hide();
     $.get('http://www.saferproducts.gov/RestWebServices/Recall?format=json', function(data){
       if (data != null) {
         console.log(data);
@@ -42,31 +43,7 @@
    } else {
      return false;
    }
- };
-
-  // cpsc.sort = function(entries){
-  //   var upcArray = [];
-  //   entries.forEach(function(entry){
-  //     upcArray.push(entry.ProductUPCs[0].UPC.replace(/\s/g,''));
-  //   });
-  //   return upcArray;
-  // };
-  //
-  // cpsc.userCompare = function(entriesWithUPC, userUPC){
-  //   var upcArr = [];
-  //   upcArr = cpsc.sort(entriesWithUPC);
-  //   var check = upcArr.indexOf(userUPC);
-  //   if(check === -1) {
-  //     console.log(userUPC);
-  //     console.log('notfound');
-  //     return false;
-  //   }else{
-  //     console.log('found');
-  //     console.log(userUPC);
-  //     console.log(entriesWithUPC[check]);
-  //     return entriesWithUPC[check];
-  //   }
-  // };
+  };
 
   cpsc.mfgrSearch = function(mfgrName, dataAll){
     var replies = dataAll.filter(function(entry){
