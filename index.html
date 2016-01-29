@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="vendor/scripts/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/black-tie/jquery-ui.css">
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/layouts.css">
     <link rel="stylesheet" href="./styles/modules.css">
@@ -32,21 +33,19 @@
     </script>
     <script id="searches" type="text/x-handlebars-template">​
       <div class="panel panel-primary">
-      <!-- <article class="result"> -->
         <div class="panel-heading">
           <h4 class="panel-title">{{name}}</h4>
           <img src="{{customerRatingImage}}">
         </div>
         <div class="panel-body">
-        <img src="{{thumbnailImage}}">
-        <h4>{{Manufacturers}}</h4>
-        <h4>{{modelNumber}}</h4>
-        <section class="{{descClass}}">{{shortDescription}}</section>
-        <a href="#" class=" btn btn-success btn-xs more-info">{{{moreInfo}}}</a>
-        <a href="{{URL}}" target="_blank">{{URL}}</a>
+          <img src="{{thumbnailImage}}">
+          <h4>{{Manufacturers}}</h4>
+          <h4>{{modelNumber}}</h4>
+          <section class="{{descClass}}">{{shortDescription}}</section>
+          <a href="#" class=" btn btn-success btn-xs more-info">{{{moreInfo}}}</a>
+          <a href="{{URL}}" target="_blank">{{URL}}</a>
+        </div>
       </div>
-      <!-- </article> -->
-    </div>
 ​    </script>
   </head>
   <body>
@@ -57,84 +56,71 @@
           <h2>Play with Peace of Mind</h2>
           <p>Enter a product UPC to check for national recall status.</p>
         <div class="container">
-        <div class="row">
-          <div class="col-xs-12 col-sm-12">
-            <form class="navbar-form  pull-left form-hide" role="search">
-              <div class="form-group">
-                <label class="sr-only" for="seachText"></label>
-                <input type="text" class="form-control" id="searchText" maxlength="12" pattern=".{0-9}.{12,}" required title="UPC must be 12 digits in length" pattern=".{0}|.{8,}"></input>
-              </div>
-              <div class="form-spinner"><img src="images/spin.svg" alt=""></div>
-              <button type="button" class="btn btn-info btn-md form-button" id="btn_search">Search</button>
-            </form>
-          </div>
-        </div>
-        </div>
-      </div>
-      </section>
-      <div class="result-spinner"><img src="images/spin.svg" alt="" style="display:none"></div>
-      <section id="result" href="/results" class="sections">
-      <div class="container">
-        <section id ="img"></section>
-        <section id ="top"></section>
-        <div class="container">
-          <div class="row row-content">
+          <div class="row">
             <div class="col-xs-12 col-sm-12">
-              <section id ="bottom">
-                <h2 id="result-header">Review and rating information for your item:</h2>
-                <div id="review" class="panel panel-default"></div>
-                <h2 id="result-header">A list of other recalls by that company:</h2>
-                <div id="recalls"></div>
-              </section>
+              <form class="navbar-form  pull-left form-hide" role="search">
+                <div class="form-group">
+                  <label class="sr-only" for="seachText"></label>
+                  <input type="text" class="form-control" id="searchText" maxlength="12" pattern=".{0-9}.{12,}" required title="UPC must be 12 digits in length" pattern=".{0}|.{8,}"></input>
+                </div>
+                <div class="form-spinner"><img src="images/spin.svg" alt=""></div>
+                <button type="button" class="btn btn-info btn-md form-button" id="btn_search">Search</button>
+              </form>
             </div>
           </div>
         </div>
-    </div>
-    <section>
-      <div class="col-xs-12" id="errorMsg">
-        <blockquote class ="well col-xs-6">
-          <p>Based on our database, this product may not be available for public purchase.  See above for recall status or verify your UPC and rerun.</p>
-        </blockquote>
-      </div>
-    </section>
-  </section>
-      <section href="/info" id="info" class="sections">
-        <div class = "container">
-        <h3>Further Safety Information</h3>
-        <p>The United States Consumer Product Safety Commission<a href="http://www.cpsc.gov/">(CPSC)</a> regulates the sale and manufacture of different consumer products from cribs to all-terrain vehicles. The CPSC does this by banning dangerous products, establishing safety requirements, issuing recalls of products already on the market, and researching potential hazards associated with consumer products.</p>
-        <p>Watch the video below to see CPSC recommendations to help keep your child safe.</p>
-        <iframe src="https://www.youtube.com/embed/55Rmfpacpno" frameborder="0" allowfullscreen></iframe>
       </div>
       </section>
-      <section id="about" href="/about" class="sections">ABOUT</section>
+      <div class="result-spinner"><img src="images/spin.svg" alt=""></div>
+      <section id="result" href="/results" class="sections">
+        <div class="container">
+          <section id ="img"></section>
+          <section id ="top"></section>
+          <div class="container">
+            <div class="row row-content">
+              <div class="col-xs-12 col-sm-12">
+                <section id ="bottom">
+                  <h2 id="result-header">Review and rating information for your item:</h2>
+                  <div id="review" class="panel panel-default"></div>
+                  <h2 id="result-header">A list of other recalls by that company:</h2>
+                  <div id="recalls"></div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      <section>
+        <div class="col-xs-12" id="errorMsg">
+          <blockquote class ="well col-xs-6">
+            <p>Based on our database, this product may not be available for public purchase.  See above for recall status or verify your UPC and rerun.</p>
+          </blockquote>
+        </div>
+      </section>
+      </section>
+        <section href="/info" id="info" class="sections">
+          <div class = "container">
+            <h3>Further Safety Information</h3>
+            <p>The United States Consumer Product Safety Commission<a href="http://www.cpsc.gov/">(CPSC)</a>regulates the sale and manufacture of different consumer products from cribs to all-terrain vehicles. The CPSC does this by banning dangerous products, establishing safety requirements, issuing recalls of products already on the market, and researching potential hazards associated with consumer products.</p>
+            <p>Watch the video below to see CPSC recommendations to help keep your child safe.</p>
+            <iframe src="https://www.youtube.com/embed/55Rmfpacpno" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </section>
+        <!-- <section id="about" href="/about" class="sections">ABOUT</section> -->
     </main>
     <footer class="row-footer">
       <div class="container">
         <div class="row">
-          <!-- <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
-            <h5>Links</h5>
-            <ul class="list-unstyled">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div> -->
           <div class="col-xs-12" align=center>
-            <!-- <p style="padding:10px;"></p> -->
             <p> © Copyright 2016 Baby Safe | <a href="/terms.html">Terms &amp; Conditions</a> | <a href="/info">Additional Info on Recalls</a> | <a href="/">Home</a></p>
-          </div>
           </div>
         </div>
       </div>
     </footer>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/black-tie/jquery-ui.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="vendor/scripts/page.js"></script>
-
     <script src="vendor/scripts/handlebars-v4.0.5.js"></script>
-    <!-- <script src="vendor/scripts/page.js"></script> -->
     <script src="scripts/pageDisplay.js"></script>
     <script src="scripts/routes.js"></script>
     <script src="scripts/walmart.js"></script>
@@ -147,9 +133,6 @@
     <script src="scripts/resultsView.js"></script>
     <script src="scripts/results.js"></script>
     <script src="scripts/recalMnfView.js"></script>
-
-    <script>
-      cpsc.getRecalls();
-    </script>
+    <script>cpsc.getRecalls();</script>
   </body>
 </html>
