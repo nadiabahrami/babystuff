@@ -6,7 +6,7 @@ var webpage = {};
 webpage.pageDisplay = function(content) {
   console.log(content);
   $('.sections').hide();
-  $('#' + content).show();
+  $('#' + content).fadeIn()
 }
 
 
