@@ -1,6 +1,6 @@
 page.base('');
 // page('', home);
-page('/results', result);
+page('/results', results);
 page('/info', video);
 page('/about', about);
 // page('*', notFound)
@@ -11,7 +11,7 @@ page();
 //   webpage.pageDisplay('');
 // }
 
-function result(){
+function results(){
   webpage.pageDisplay('results');
 }
 

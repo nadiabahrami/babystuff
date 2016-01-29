@@ -53,8 +53,11 @@ body{
   width:25%;
 }
 
+.right {
+  margin-left: 12%;
+}
 
-@media only screen and (min-width: 980px){
+@media only screen and (min-width: 460px){
   body{
     background-color: #F7F4F6;
     padding-top: 0;
@@ -77,6 +80,4 @@ body{
     border-bottom: 2px solid black;
   }
 
-  .right {
-    margin-left: 10em;
-  }
+}
