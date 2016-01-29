@@ -23,6 +23,10 @@
   display: hidden;
 }
 
+.result-spinner {
+  display: hidden;
+}
+
 #home {
     /*padding: 70px 30px 70px 30px;*/
     margin: 0px auto;
