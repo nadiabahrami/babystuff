@@ -17,15 +17,17 @@
     <script id="rsltPic" type= "text/x-handlebars-tempalte">
       <div class="container">
         <img src="{{imgresponse}}" class="flag"/>
-        <p id ="clause">Your UPC search of {{searchUPC}} is {{recommendation}}</p>
+        <h4 id ="clause">Your UPC search of {{searchUPC}} is {{recommendation}}</h4>
       </div>
     </script>
     <script id="recallHit" type= "text/x-handlebars-template">
-      <h3>ITEM RECALLED</h3>
-      <p>Your search of {{searchUPC}} found an item titled "{{title}}"</p>
-      <div><img src="{{thumbnail}}" class="flag"/></div>
-      <p>To return and possibly receive a refund:</p>
-      <p>{{repair}}</p>
+      <div class="container">
+        <h3>ITEM RECALLED</h3>
+        <h4>Your search of {{searchUPC}} found an item titled "{{title}}"</h4>
+        <div><img src="{{thumbnail}}" class="flag"/></div>
+        <h3>What you should do:</h3>
+        <h4>{{repair}}</h4>
+      </div>
     </script>
     <script id="searches" type="text/x-handlebars-template">​
       <article class="result">
@@ -82,7 +84,7 @@
         </div>
 
 
-    <section>
+    <section id="warning">
       <div class="col-xs-12" id="errorMsg">
         <blockquote class ="well col-xs-6">
           <p>Based on our database, this product may not be available for public purchase.  See above for recall status or verify your UPC and rerun.<p>
