@@ -5,6 +5,7 @@
   	<meta http-equiv="=X-UA-Compatible" content="IE=edge">
   	<meta name="Viewport" content="width=device-width,initial-scale=1">
     <title>BabySafe</title>
+    <link href='https://fonts.googleapis.com/css?family=Enriqueta' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Zeyada' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="vendor/scripts/normalize.css">
@@ -17,27 +18,33 @@
     <script id="rsltPic" type= "text/x-handlebars-tempalte">
       <div class="container">
         <img src="{{imgresponse}}" class="flag"/>
-        <p id ="clause">Your UPC search of {{searchUPC}} is {{recommendation}}</p>
+        <p id ="clause" class="font">Your UPC search of {{searchUPC}} is {{recommendation}}</p>
       </div>
     </script>
     <script id="recallHit" type= "text/x-handlebars-template">
       <h3>ITEM RECALLED</h3>
-      <p>Your search of {{searchUPC}} found an item titled "{{title}}"</p>
+      <p class="font">Your search of {{searchUPC}} found an item titled "{{title}}"</p>
       <div><img src="{{thumbnail}}" class="flag"/></div>
       <p>To return and possibly receive a refund:</p>
       <p>{{repair}}</p>
     </script>
     <script id="searches" type="text/x-handlebars-template">​
-      <article class="result">
+      <div class="panel panel-primary">
+      <!-- <article class="result"> -->
+        <div class="panel-heading">
+          <h4 class="panel-title">{{name}}</h4>
+          <img src="{{customerRatingImage}}">
+        </div>
+        <div class="panel-body">
         <img src="{{thumbnailImage}}">
-        <img src="{{customerRatingImage}}">
-        <h3>{{name}}</h3>
         <h4>{{Manufacturers}}</h4>
         <h4>{{modelNumber}}</h4>
         <section class="{{descClass}}">{{shortDescription}}</section>
-        <a href="#" class=" btn btn-primary btn-xs more-info">{{{moreInfo}}}</a>
+        <a href="#" class=" btn btn-success btn-xs more-info">{{{moreInfo}}}</a>
         <a href="{{URL}}" target="_blank">{{URL}}</a>
-      </article>
+      </div>
+      <!-- </article> -->
+    </div>
 ​    </script>
   </head>
   <body>
@@ -48,40 +55,37 @@
           <h2>Play with Peace of Mind</h2>
           <p>Enter a product UPC to check for national recall status.</p>
         <div class="container">
-          <div class="row">
-            <div class="col-xs-12 col-sm-12">
-              <form class="navbar-form  pull-left form-hide" role="search">
-                <div class="form-group">
-                  <label class="sr-only" for="seachText"></label>
-                  <input type="text" class="form-control" id="searchText" min="12" pattern=".{0-9}.{12,}" required title="UPC must be 12 digits in length" pattern=".{0}|.{8,}"></input>
-                </div>
-                <div class="form-spinner"><img src="images/spin.svg" alt=""></div>
-                <button type="button" class="btn btn-info btn-md form-button" id="btn_search">Search</button>
-              </form>
-            </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12">
+            <form class="navbar-form  pull-left form-hide" role="search">
+              <div class="form-group">
+                <label class="sr-only" for="seachText"></label>
+                <input type="text" class="form-control" id="searchText" min="12" pattern=".{0-9}.{12,}" required title="UPC must be 12 digits in length" pattern=".{0}|.{8,}"></input>
+              </div>
+              <div class="form-spinner"><img src="images/spin.svg" alt=""></div>
+              <button type="button" class="btn btn-info btn-md form-button" id="btn_search">Search</button>
+            </form>
           </div>
+        </div>
         </div>
       </div>
       </section>
       <div class="result-spinner"><img src="images/spin.svg" alt=""></div>
       <section id="result" href="/results" class="sections">
+      <div class="container">
         <section id ="img"></section>
         <section id ="top"></section>
-
-        <div class="container">
-          <div class="row row-content">
-            <div class="col-xs-12 col-sm-12">
-              <section id ="bottom">
-                <h2>Product Review by Walmart:</h2>
-                <div id="review" class="panel panel-default"></div>
-                <h2>Company recalls</h2>
-                <div id="recalls"></div>
-              </section>
-            </div>
+        <div class="row row-content">
+          <div class="col-xs-12 col-sm-12">
+            <section id ="bottom">
+              <h2>Product Review by Walmart:</h2>
+              <div id="review"></div>
+              <h2>Company recalls</h2>
+              <div id="recalls"></div>
+            </section>
           </div>
         </div>
-
-
+    </div>
     <section>
       <div class="col-xs-12" id="errorMsg">
         <blockquote class ="well col-xs-6">
