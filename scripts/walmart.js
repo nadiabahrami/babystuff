@@ -37,6 +37,7 @@
   walmart.showWalmartInfo = function(data) {
     walmartUpcData.length = 0;
     walmartUpcData.push(new Display(data));
+    $('#result-header').show();
     walmartUpcData.forEach(function(a){
       $('#review').append(a.recallDisplay(1));
     });

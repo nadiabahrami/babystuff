@@ -19,6 +19,9 @@
   color: black;
 }
 
+#result-header {
+  display: hidden;
+}
 
 #home {
     /*padding: 70px 30px 70px 30px;*/
