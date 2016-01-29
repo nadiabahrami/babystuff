@@ -48,7 +48,8 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-12">
-              <form class="navbar-form  pull-left" role="search">
+              <div class="form-spinner"><img src="images/default.svg" alt=""></div>
+              <form class="navbar-form  pull-left form-hide" role="search">
                 <div class="form-group">
                   <label class="sr-only" for="seachText"></label>
                   <input type="text" class="form-control" id="searchText" min="12" pattern=".{0-9}.{12,}" required title="UPC must be 12 digits in length" pattern=".{0}|.{8,}"></input>
@@ -63,9 +64,9 @@
         <section id ="img"></section>
         <section id ="top"></section>
         <section id ="bottom">
-          <h2>Product Review by Walmart:</h2>
+          <!-- <h2>Product Review by Walmart:</h2> -->
           <div id="review"></div>
-          <h2>Company recalls</h2>
+          <!-- <h2>Company recalls</h2> -->
           <div id="recalls"></div>
         </section>
       </section>
