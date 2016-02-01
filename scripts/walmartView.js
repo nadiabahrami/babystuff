@@ -6,6 +6,7 @@
     this.shortDescription = data.shortDescription,
     this.customerRatingImage = data.customerRatingImage
   };
+  
   Display.prototype.recallDisplay = function(result){
   if (!result) {
   }else {
@@ -24,7 +25,6 @@
 
   Display.setTeasers = function() {
   $('.description').hide();
-
   $('#bottom').on('click', 'a.more-info', function(event) {
     event.preventDefault();
     $(this).parent().find('.description').fadeIn();

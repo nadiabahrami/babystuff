@@ -1,6 +1,5 @@
 (function(module){
   function DisplayRecall(data) {
-    // this.thumbnailImage = data.Manufacturers[0].Name,
     this.Manufacturers = data.Manufacturers[0].Name,
     this.name = data.Title,
     this.shortDescription = data.Description,

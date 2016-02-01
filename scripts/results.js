@@ -3,7 +3,6 @@
 var resultArray = {};
 
 resultArray.flagProduction = function(result){
-  console.log(result);
   $('#img').empty();
   if(result === false){
     $('#top').empty();
@@ -31,5 +30,4 @@ resultArray.flagProduction = function(result){
 };
 
 module.resultArray = resultArray;
-
 })(window);

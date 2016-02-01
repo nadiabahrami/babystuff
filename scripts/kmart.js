@@ -9,7 +9,6 @@
       dataType: 'jsonp',
       success: function(data){
         kmart.all = data;
-        console.log(data);
       }
     })
   }

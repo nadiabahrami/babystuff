@@ -9,7 +9,6 @@
       dataType: 'jsonp',
       success: function(data){
         sears.all = data;
-        console.log(data);
       }
     })
   }

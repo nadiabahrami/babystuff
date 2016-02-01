@@ -10,9 +10,7 @@
     $('.result-spinner').hide();
     $.get('http://www.saferproducts.gov/RestWebServices/Recall?format=json', function(data){
       if (data != null) {
-        console.log(data);
         cpsc.all = data;
-        console.log(cpsc.all.length);
         $('.form-button').fadeIn();
         $('.form-spinner').hide();
       }else{
@@ -55,7 +53,6 @@
         return false;
       }
     });
-    console.log(replies);
     walmart.showMnfRecall(replies);
   };
 
@@ -67,8 +64,6 @@
   };
 
   cpsc.getMfgr = function (item){
-    console.log(item.name.split(/\s+/).slice(0,2).join(' '));
-    console.log(item.name.split(/\s+/).slice(0,1).join(' '));
     cpsc.mfgrSearch(item.name.split(/\s+/).slice(0,2).join(' '), cpsc.all);
     cpsc.mfgrSearch(item.name.split(/\s+/).slice(0,1).join(' '), cpsc.all);
   };

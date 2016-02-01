@@ -4,7 +4,7 @@ page('results', results);
 page('info', info);
 page('about', about);
 page('terms', terms);
-// page('*', notFound)
+page('*', notFound)
 
 page();
 
