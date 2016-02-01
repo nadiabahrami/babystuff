@@ -10,7 +10,7 @@
       success: function(data){
         kmart.all = data;
       }
-    })
-  }
+    });
+  };
   module.kmart = kmart;
 })(window);

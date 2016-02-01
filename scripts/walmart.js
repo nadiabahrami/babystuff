@@ -41,7 +41,7 @@
     });
     $('.result-spinner').hide();
     $('#result').fadeIn();
-  }
+  };
 
   walmart.showMnfRecall = function(replies) {
     recallMnfData.length = 0;
@@ -52,7 +52,7 @@
       $('#recalls').append(a.recallMnfDisplay(1));
       Display.setTeasers();
     });
-  }
+  };
 
   module.walmart = walmart;
 })(window);

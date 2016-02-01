@@ -27,19 +27,19 @@
   };
 
   cpsc.sort = function(upcData, upc){
-   var replies = upcData.filter(function(entry){
-     var upcObjs = entry.ProductUPCs.filter(function(upcObj){
-       return upc === upcObj.UPC;
-     });
-     if (upcObjs.length > 0) {
-       return entry;
-     }
-   });
-   if (replies.length > 0) {
-     return replies;
-   } else {
-     return false;
-   }
+    var replies = upcData.filter(function(entry){
+      var upcObjs = entry.ProductUPCs.filter(function(upcObj){
+        return upc === upcObj.UPC;
+      });
+      if (upcObjs.length > 0) {
+        return entry;
+      }
+    });
+    if (replies.length > 0) {
+      return replies;
+    } else {
+      return false;
+    }
   };
 
   cpsc.mfgrSearch = function(mfgrName, dataAll){
