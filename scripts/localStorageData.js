@@ -6,15 +6,15 @@
     if($('#searchText').val().length === 12) {
       $('#result').hide();
       $('.result-spinner').show();
-      $('#errorMsg').hide()
+      $('#errorMsg').hide();
       $('#bottom > div').empty();
       var textBoxValue = $('#searchText').val();
       if (localStorage.searchResult) {
         objData.dataArray = JSON.parse(localStorage.getItem('searchResult'));
-          if(objData.dataArray.indexOf(textBoxValue) === -1){
-            objData.dataArray.push(textBoxValue);
-            localStorage.setItem('searchResult', JSON.stringify(objData.dataArray));
-           }
+        if(objData.dataArray.indexOf(textBoxValue) === -1){
+          objData.dataArray.push(textBoxValue);
+          localStorage.setItem('searchResult', JSON.stringify(objData.dataArray));
+        }
       }else {
         objData.dataArray.push(textBoxValue);
         localStorage.setItem('searchResult', JSON.stringify(objData.dataArray));
@@ -30,9 +30,9 @@
         cpsc.controller(objData.active);
       }
       $('#searchText').val('');
-  }else{
-    $('#searchText').tooltip('enable');
-    $('#searchText').addClass('errorText');
+    } else {
+      $('#searchText').tooltip('enable');
+      $('#searchText').addClass('errorText');
     }
   });
 

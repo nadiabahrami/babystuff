@@ -1,18 +1,17 @@
 .row-header{
-    margin: 0px auto;
-    padding: 0px auto;
+  margin: 0px auto;
+  padding: 0px auto;
 }
 .row-content{
-    margin: 0px auto;
-    padding: 50px 0px 50px 0px;
-    border-bottom: 1px ridge;
-    min-height: 400px;
+  margin: 0px auto;
+  padding: 50px 0px 50px 0px;
+  border-bottom: 1px ridge;
+  min-height: 400px;
 }
 .row-footer{
-    /*background-color: #AfAfAf;*/
-    color: white;
-    margin: 0px auto;
-    padding: 20px 0px 20px 0px;
+  color: white;
+  margin: 0px auto;
+  padding: 20px 0px 20px 0px;
 }
 
 .col-xs-12 {
@@ -28,26 +27,25 @@
 }
 
 #home {
-    /*padding: 70px 30px 70px 30px;*/
-    margin: 0px auto;
-    background: #7986CB;
-    color: floralwhite;
+  margin: 0px auto;
+  background: #7986CB;
+  color: floralwhite;
 }
 
 body{
-    padding:0;
+  padding:0;
 }
 
 .navbar-inverse {
-    background: #303F9F;
-    color: white;
+  background: #303F9F;
+  color: white;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
-    color: #fff;
-    background: #1A237E;
+  color: #fff;
+  background: #1A237E;
 }
 
 .errorText{

@@ -10,11 +10,9 @@
   walmart.similarRequest = function(query, callback) {
     $.get('/walmart/search?query=' + query + '&format=json&categoryId=5427')
     .done(function(data) {
-      console.log(data);
     })
     .done(function(data){
       walmart.all = data.items;
-      console.log(walmart.all);
     });
   };
 
@@ -28,7 +26,6 @@
         $('#result-header').show();
       } else {
         $('#result-header').hide();
-        console.log('This item does not exist in the WalMart database');
         $('#errorMsg').show();
         $('.result-spinner').hide();
         $('#result').fadeIn();
@@ -44,7 +41,7 @@
     });
     $('.result-spinner').hide();
     $('#result').fadeIn();
-  }
+  };
 
   walmart.showMnfRecall = function(replies) {
     recallMnfData.length = 0;
@@ -55,7 +52,7 @@
       $('#recalls').append(a.recallMnfDisplay(1));
       Display.setTeasers();
     });
-  }
+  };
 
   module.walmart = walmart;
 })(window);

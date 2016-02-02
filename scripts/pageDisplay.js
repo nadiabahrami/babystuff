@@ -1,16 +1,12 @@
 (function (module) {
-$('.sections').hide();
-
-var webpage = {};
-
-webpage.pageDisplay = function(content) {
-  console.log(content);
   $('.sections').hide();
-  $('#' + content).fadeIn()
-}
 
+  var webpage = {};
 
+  webpage.pageDisplay = function(content) {
+    $('.sections').hide();
+    $('#' + content).fadeIn();
+  };
 
-module.webpage = webpage;
-
+  module.webpage = webpage;
 })(window);
